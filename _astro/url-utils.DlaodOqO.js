@@ -1,0 +1,1 @@
+import"./navBarConfig.DhxDCSZI.js";import"./zh_TW.vPeSsvua.js";function c(o,r){const e=o.replace(/^\/|\/$/g,"").toLowerCase(),n=r.replace(/^\/|\/$/g,"").toLowerCase();return e===n}function t(...o){return o.join("/").replace(/\/+/g,"/")}function s(o){return t("","/my-astro/",o)}export{c as p,s as u};
