@@ -13,6 +13,8 @@
         overflow: hidden;
         background: transparent;
       }
+      /* 放大模型本身，让 transform 撑出显示区域，下半身被 overflow:hidden 裁剪 */
+      canvas { transform: scale(2.2); transform-origin: top center; }
       
     </style>
   </head>
