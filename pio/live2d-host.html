@@ -13,14 +13,11 @@
         overflow: hidden;
         background: transparent;
       }
-      /* 固定 iframe 内部 body 高度，防止 notifyLoaded 动态撑大 */
       html,
       body {
         height: 700px !important;
         max-height: 700px !important;
       }
-      /* 放大模型显示：内部 840px(3x) → CSS 显示 616px → 下采样不模糊
-         translateX 居中，overflow:hidden 裁剪 */
       canvas {
         width: 616px !important;
         height: auto !important;
@@ -57,6 +54,185 @@
       var activeConfigKey = "";
       var loadingConfigKey = "";
       var lastContentHeight = 500;
+      var idleTimer = null;
+      var timeGreeted = false;
+
+      // ========== 原生 L2D_WIDGET 气泡操控 ==========
+
+      var nativeBubble = null; // { container, inner, textSpan }
+      var nativeBubbleHideTimer = null;
+
+      // 查找 L2D_WIDGET 创建的原生蓝色气泡
+      function findNativeBubble() {
+        // 查找 widget 容器 div（position:fixed, z-index:9999）
+        var containers = document.querySelectorAll(
+          'div[style*="position: fixed"][style*="z-index: 9999"]',
+        );
+        for (var i = 0; i < containers.length; i++) {
+          var c = containers[i];
+          // 气泡在外层容器内，position:absolute, bottom:calc(100% + ...)
+          var bubbles = c.querySelectorAll('div[style*="bottom: calc(100%"]');
+          for (var j = 0; j < bubbles.length; j++) {
+            var b = bubbles[j];
+            var span = b.querySelector("span");
+            if (span) {
+              return {
+                container: b,
+                inner: span.parentElement,
+                textSpan: span,
+              };
+            }
+          }
+        }
+        return null;
+      }
+
+      // 在原生蓝色气泡中显示文字
+      function showNativeTip(text, duration) {
+        if (!nativeBubble) {
+          nativeBubble = findNativeBubble();
+        }
+        if (!nativeBubble) return;
+
+        var inner = nativeBubble.inner;
+        var span = nativeBubble.textSpan;
+
+        // 清除之前的定时器
+        clearTimeout(nativeBubbleHideTimer);
+
+        // 重置
+        inner.style.transition = "none";
+        inner.style.animation = "none";
+        inner.style.opacity = "0";
+        inner.style.transform = "";
+        span.textContent = "";
+
+        // 强制回流
+        inner.offsetHeight;
+
+        // 设置文字（长文本换行）
+        inner.style.whiteSpace = "pre-wrap";
+        span.textContent = text;
+
+        // 入场动画
+        inner.style.animation = "l2dw-tips-in 0.35s ease-out forwards";
+
+        // 入场后切换浮动动画
+        setTimeout(function () {
+          if (inner.style.animation.indexOf("l2dw-tips-in") !== -1) {
+            inner.style.opacity = "1";
+            inner.style.animation = "l2dw-tips-float 2.5s ease-in-out infinite";
+          }
+        }, 400);
+
+        // 自动隐藏
+        nativeBubbleHideTimer = setTimeout(function () {
+          inner.style.animation = "none";
+          inner.style.transition = "opacity 0.25s ease, transform 0.25s ease";
+          inner.style.opacity = "0";
+          inner.style.transform = "translateY(6px)";
+          setTimeout(function () {
+            inner.style.transition = "none";
+            inner.style.transform = "";
+          }, 260);
+        }, duration || 5000);
+      }
+
+      // 发送对话到原生气泡，并重置待机定时器防止连续说话
+      function say(text, duration) {
+        showNativeTip(text, duration);
+        resetIdleTimer();
+      }
+
+      // ========== 对话库 ==========
+
+      function pick(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+      }
+
+      var idleMessages = [
+        "今天天气真不错呢~",
+        "要不要看看我的新衣服？",
+        "好无聊啊，陪我聊聊天吧~",
+        "你最喜欢哪篇文章呢？",
+        "要不要听听音乐放松一下？",
+        "今天也要元气满满哦！",
+        "有什么想对我说的吗？",
+        "我在偷偷看你呢~",
+        "这个博客真好看！",
+        "别忘了点赞和收藏哦~",
+      ];
+
+      var touchMessages = {
+        head: ["不要摸我的头！", "发型会乱的啦~", "你再摸我要生气了！"],
+        body: ["干嘛呀！", "HENTAI！", "不许碰那里！", "好痒啊哈哈哈~"],
+        default: ["有什么事吗？", "嗯？", "怎么啦~", "我在听呢"],
+      };
+
+      function getTimeMessage() {
+        var hour = new Date().getHours();
+        if (hour >= 5 && hour < 8) return "早上好！新的一天开始啦~";
+        if (hour >= 8 && hour < 12) return "上午好！今天也要加油哦~";
+        if (hour >= 12 && hour < 14) return "中午好！记得吃午饭哦~";
+        if (hour >= 14 && hour < 18) return "下午好！来杯下午茶吧~";
+        if (hour >= 18 && hour < 22) return "晚上好！今天过得怎么样？";
+        if (hour >= 22 || hour < 2) return "夜深了，早点休息吧~";
+        return "这么晚了还不睡吗？要注意身体哦！";
+      }
+
+      function checkTimeGreeting() {
+        if (!timeGreeted) {
+          timeGreeted = true;
+          setTimeout(function () {
+            say(getTimeMessage(), 6000);
+          }, 5000);
+        }
+      }
+
+      // ========== 待机对话 & 一言 ==========
+
+      function startIdleDialog() {
+        stopIdleDialog();
+        idleTimer = setInterval(
+          function () {
+            if (Math.random() < 0.3) {
+              fetchHitokoto();
+            } else {
+              say(pick(idleMessages), 5000);
+            }
+          },
+          60000 + Math.random() * 60000,
+        );
+      }
+
+      function stopIdleDialog() {
+        if (idleTimer) {
+          clearInterval(idleTimer);
+          idleTimer = null;
+        }
+      }
+
+      function resetIdleTimer() {
+        stopIdleDialog();
+        startIdleDialog();
+      }
+
+      function fetchHitokoto() {
+        try {
+          fetch("https://v1.hitokoto.cn/?c=a&c=b&c=c&c=d&encode=text")
+            .then(function (r) {
+              return r.text();
+            })
+            .then(function (text) {
+              if (text && text.length < 100) {
+                say(text, 6000);
+              }
+            })
+            .catch(function () {});
+        } catch (e) {}
+      }
+
+      // ========== 菜单 ==========
 
       var menuActions = {
         home: function () {
@@ -70,6 +246,14 @@
         },
         sleep: function (w) {
           w.sleep();
+          stopIdleDialog();
+          say("晚安~", 3000);
+        },
+        switchSkin: function (w) {
+          parent.postMessage({ type: "l2d-action", action: "switchSkin" }, "*");
+        },
+        hitokoto: function () {
+          fetchHitokoto();
         },
       };
 
@@ -83,7 +267,6 @@
             }
           }
         });
-
         lastContentHeight = Math.ceil(maxBottom) || lastContentHeight || 500;
         parent.postMessage(
           { type: "l2d-loaded", contentHeight: lastContentHeight },
@@ -102,79 +285,132 @@
 
       function destroyWidget() {
         if (!widgetInstance) return;
+        stopIdleDialog();
         try {
           widgetInstance.destroy();
         } catch (err) {
           console.error("Failed to destroy Live2D widget:", err);
         }
         widgetInstance = null;
+        nativeBubble = null;
       }
 
+      // ========== 初始化 ==========
+
       window.addEventListener("message", function (e) {
-        if (e.data.type !== "l2d-init") return;
-        var config = e.data.config;
-        var configKey = JSON.stringify(config);
+        if (e.data.type === "l2d-init") {
+          var config = e.data.config;
+          var configKey = JSON.stringify(config);
 
-        if (widgetInstance && activeConfigKey === configKey) {
-          notifyLoaded();
-          return;
-        }
-
-        if (loadingConfigKey === configKey) {
-          return;
-        }
-
-        loadingConfigKey = configKey;
-        if (widgetInstance) {
-          destroyWidget();
-        }
-
-        if (config.menus && config.menus.items) {
-          config.menus.items = config.menus.items.map(function (item) {
-            return {
-              icon: item.icon,
-              label: item.label,
-              onClick: menuActions[item.action] || function () {},
-            };
-          });
-        }
-
-        try {
-          widgetInstance = L2D_WIDGET.createWidget(config);
-          activeConfigKey = configKey;
-        } catch (err) {
-          loadingConfigKey = "";
-          activeConfigKey = "";
-          console.error("Failed to initialize Live2D widget:", err);
-          return;
-        }
-        loadingConfigKey = "";
-
-        if (config._hideAbout) {
-          hideAboutMenu();
-        }
-
-        var notified = false;
-        function notifyOnce() {
-          if (notified) return;
-          notified = true;
-          notifyLoaded();
-        }
-
-        var checkInterval = setInterval(function () {
-          var canvas = document.querySelector("canvas");
-          if (canvas && canvas.width > 0 && canvas.height > 0) {
-            clearInterval(checkInterval);
-            setTimeout(notifyOnce, 300);
+          if (widgetInstance && activeConfigKey === configKey) {
+            notifyLoaded();
+            return;
           }
-        }, 200);
 
-        setTimeout(function () {
-          clearInterval(checkInterval);
+          if (loadingConfigKey === configKey) return;
+
+          loadingConfigKey = configKey;
+          if (widgetInstance) {
+            destroyWidget();
+          }
+
+          if (config.menus && config.menus.items) {
+            config.menus.items = config.menus.items.map(function (item) {
+              return {
+                icon: item.icon,
+                label: item.label,
+                onClick: menuActions[item.action] || function () {},
+              };
+            });
+          }
+
+          try {
+            widgetInstance = L2D_WIDGET.createWidget(config);
+            activeConfigKey = configKey;
+          } catch (err) {
+            loadingConfigKey = "";
+            activeConfigKey = "";
+            console.error("Failed to initialize Live2D widget:", err);
+            return;
+          }
           loadingConfigKey = "";
-          notifyOnce();
-        }, 15000);
+
+          if (config._hideAbout) {
+            hideAboutMenu();
+          }
+
+          // 延迟查找原生气泡（等 widget 渲染完成）
+          setTimeout(function () {
+            nativeBubble = findNativeBubble();
+          }, 500);
+
+          startIdleDialog();
+          checkTimeGreeting();
+
+          var notified = false;
+          function notifyOnce() {
+            if (notified) return;
+            notified = true;
+            notifyLoaded();
+          }
+
+          var checkInterval = setInterval(function () {
+            var canvas = document.querySelector("canvas");
+            if (canvas && canvas.width > 0 && canvas.height > 0) {
+              clearInterval(checkInterval);
+              bindCanvasClick(canvas);
+              setTimeout(notifyOnce, 300);
+            }
+          }, 200);
+
+          setTimeout(function () {
+            clearInterval(checkInterval);
+            loadingConfigKey = "";
+            notifyOnce();
+          }, 15000);
+        }
+
+        if (e.data.type === "l2d-music") {
+          if (e.data.playing) {
+            say("正在播放：" + e.data.title + " - " + e.data.artist, 5000);
+          }
+        }
+
+        if (e.data.type === "l2d-notify") {
+          say(e.data.text, e.data.duration || 5000);
+        }
       });
+
+      // ========== 点击部位反应 ==========
+
+      function bindCanvasClick(canvas) {
+        if (!canvas || canvas.dataset.l2dClickBound) return;
+        canvas.dataset.l2dClickBound = "1";
+
+        canvas.addEventListener("click", function (e) {
+          var rect = canvas.getBoundingClientRect();
+          var y = e.clientY - rect.top;
+          var h = rect.height;
+
+          var relY = y / h;
+          var msg;
+          if (relY < 0.2) {
+            msg = pick(touchMessages.head);
+          } else if (relY < 0.5) {
+            msg = pick(touchMessages.body);
+          } else {
+            msg = pick(touchMessages.default);
+          }
+
+          // 发送点击位置，用于粒子特效
+          parent.postMessage(
+            { type: "l2d-click", x: e.clientX, y: e.clientY, relY: relY },
+            "*",
+          );
+
+          say(msg, 4000);
+        });
+      }
     </script>
   </body>
 </html>
