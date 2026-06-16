@@ -13,13 +13,45 @@
         overflow: hidden;
         background: transparent;
       }
-      /* 放大模型本身，让 transform 撑出显示区域，下半身被 overflow:hidden 裁剪 */
-      canvas { transform: scale(2.2); transform-origin: top center; }
-      
+      /* 固定 iframe 内部 body 高度，防止 notifyLoaded 动态撑大 */
+      html,
+      body {
+        height: 700px !important;
+        max-height: 700px !important;
+      }
+      /* 放大模型显示：内部 840px(3x) → CSS 显示 616px → 下采样不模糊
+         translateX 居中，overflow:hidden 裁剪 */
+      canvas {
+        width: 616px !important;
+        height: auto !important;
+        transform: translate(-168px, -70px);
+      }
     </style>
   </head>
   <body>
     <script src="./l2d-widget.min.js"></script>
+    <script>
+      // 在 WebGL 上下文创建前拦截，将 canvas 内部分辨率提升到 3x
+      (function () {
+        var _getContext = HTMLCanvasElement.prototype.getContext;
+        HTMLCanvasElement.prototype.getContext = function () {
+          var ctxType = arguments[0];
+          if (
+            (ctxType === "webgl" || ctxType === "webgl2") &&
+            this.width > 0 &&
+            this.height > 0 &&
+            !this.dataset.l2dResized
+          ) {
+            this.dataset.l2dResized = "1";
+            this.style.width = this.width + "px";
+            this.style.height = this.height + "px";
+            this.width = this.width * 3;
+            this.height = this.height * 3;
+          }
+          return _getContext.apply(this, arguments);
+        };
+      })();
+    </script>
     <script>
       var widgetInstance = null;
       var activeConfigKey = "";
