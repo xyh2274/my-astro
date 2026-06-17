@@ -3,4 +3,4 @@ Disallow: /
 Allow: /$
 Allow: /posts/
 
-Sitemap: https://xyh2274.github.io/my-astro/sitemap-index.xml
+Sitemap: https://arcoiris.cn/sitemap-index.xml
