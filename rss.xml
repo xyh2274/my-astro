@@ -1,228 +1,220 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Mizuki</title><description>One demo website</description><link>https://arcoiris.cn/</link><language>zh_CN</language><item><title>Markdown Tutorial</title><link>https://arcoiris.cn/posts/markdown-tutorial/</link><guid isPermaLink="true">https://arcoiris.cn/posts/markdown-tutorial/</guid><description>A simple example of a Markdown blog post.</description><pubDate>Mon, 20 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Markdown Tutorial&lt;/h1&gt;
-&lt;p&gt;A markdown example shows how to write a markdown file. This document integrates core syntax and extensions (GMF).&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Mizuki</title><description>One demo website</description><link>https://arcoiris.cn/</link><language>zh_CN</language><item><title>Markdown 教程</title><link>https://arcoiris.cn/posts/markdown-tutorial/</link><guid isPermaLink="true">https://arcoiris.cn/posts/markdown-tutorial/</guid><description>一篇 Markdown 博客文章的简单示例。</description><pubDate>Mon, 20 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Markdown 教程&lt;/h1&gt;
+&lt;p&gt;一个 Markdown 示例，展示如何编写 Markdown 文件。本文档整合了核心语法和扩展语法（GFM）。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#block-elements&quot;&gt;Block Elements&lt;/a&gt;
+&lt;li&gt;&lt;a href=&quot;#block-elements&quot;&gt;块级元素&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#paragraphs-and-line-breaks&quot;&gt;Paragraphs and Line Breaks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#headers&quot;&gt;Headers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#blockquotes&quot;&gt;Blockquotes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#lists&quot;&gt;Lists&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#code-blocks&quot;&gt;Code Blocks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#horizontal-rules&quot;&gt;Horizontal Rules&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#table&quot;&gt;Table&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#paragraphs-and-line-breaks&quot;&gt;段落和换行&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#headers&quot;&gt;标题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#blockquotes&quot;&gt;块引用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#lists&quot;&gt;列表&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#code-blocks&quot;&gt;代码块&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#horizontal-rules&quot;&gt;水平分割线&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#table&quot;&gt;表格&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#span-elements&quot;&gt;Span Elements&lt;/a&gt;
+&lt;li&gt;&lt;a href=&quot;#span-elements&quot;&gt;行内元素&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#links&quot;&gt;Links&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#emphasis&quot;&gt;Emphasis&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#code&quot;&gt;Code&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#images&quot;&gt;Images&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#strikethrough&quot;&gt;Strikethrough&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#links&quot;&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#emphasis&quot;&gt;强调&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#code&quot;&gt;代码&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#images&quot;&gt;图片&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#strikethrough&quot;&gt;删除线&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#miscellaneous&quot;&gt;Miscellaneous&lt;/a&gt;
+&lt;li&gt;&lt;a href=&quot;#miscellaneous&quot;&gt;其他&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#automatic-links&quot;&gt;Automatic Links&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#backslash-escapes&quot;&gt;Backslash Escapes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#automatic-links&quot;&gt;自动链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#backslash-escapes&quot;&gt;反斜杠转义&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#inline-html&quot;&gt;Inline HTML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#inline-html&quot;&gt;内联 HTML&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Block Elements&lt;/h2&gt;
-&lt;h3&gt;Paragraphs and Line Breaks&lt;/h3&gt;
-&lt;h4&gt;Paragraphs&lt;/h4&gt;
-&lt;p&gt;HTML Tag: &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;One or more blank lines. (A blank line is a line containing nothing but &lt;strong&gt;spaces&lt;/strong&gt; or &lt;strong&gt;tabs&lt;/strong&gt; is considered blank.)&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;This will be
-inline.
+&lt;h2&gt;块级元素&lt;/h2&gt;
+&lt;h3&gt;段落和换行&lt;/h3&gt;
+&lt;h4&gt;段落&lt;/h4&gt;
+&lt;p&gt;HTML 标签：&lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;一个或多个空行。（空行是指只包含&lt;strong&gt;空格&lt;/strong&gt;或&lt;strong&gt;制表符&lt;/strong&gt;的行。）&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;这是第一行，将
+合并为内联。
 
-This is second paragraph.
+这是第二段。
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;This will be
-inline.&lt;/p&gt;
-&lt;p&gt;This is second paragraph.&lt;/p&gt;
+&lt;p&gt;这是第一行，将
+合并为内联。&lt;/p&gt;
+&lt;p&gt;这是第二段。&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h4&gt;Line Breaks&lt;/h4&gt;
-&lt;p&gt;HTML Tag: &lt;code&gt;&amp;lt;br /&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;End a line with &lt;strong&gt;two or more spaces&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;This will be not
-inline.
+&lt;h4&gt;换行&lt;/h4&gt;
+&lt;p&gt;HTML 标签：&lt;code&gt;&amp;lt;br /&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在行尾添加&lt;strong&gt;两个或更多空格&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;这一行末尾有两个空格，
+所以会换行。
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;This will be not&lt;br /&gt;
-inline.&lt;/p&gt;
+&lt;p&gt;这一行末尾有两个空格，&lt;br /&gt;
+所以会换行。&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h3&gt;Headers&lt;/h3&gt;
-&lt;p&gt;Markdown supports two styles of headers, Setext and atx.&lt;/p&gt;
-&lt;h4&gt;Setext&lt;/h4&gt;
-&lt;p&gt;HTML Tags: &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;h2&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&quot;Underlined&quot; using &lt;strong&gt;equal signs (=)&lt;/strong&gt; as &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; and &lt;strong&gt;dashes (-)&lt;/strong&gt; as &lt;code&gt;&amp;lt;h2&amp;gt;&lt;/code&gt; in any number.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
+&lt;h3&gt;标题&lt;/h3&gt;
+&lt;p&gt;Markdown 支持两种标题样式：Setext 和 atx。&lt;/p&gt;
+&lt;h4&gt;Setext 样式&lt;/h4&gt;
+&lt;p&gt;HTML 标签：&lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;h2&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;使用**等号（=）**表示 &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;，**连字符（-）**表示 &lt;code&gt;&amp;lt;h2&amp;gt;&lt;/code&gt;，数量不限。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;This is an H1
 =============
 This is an H2
 -------------
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h1&gt;This is an H1&lt;/h1&gt;
 &lt;h2&gt;This is an H2&lt;/h2&gt;
 &lt;hr /&gt;
-&lt;h4&gt;atx&lt;/h4&gt;
-&lt;p&gt;HTML Tags: &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;h2&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;h3&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;h4&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;h5&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Uses 1-6 &lt;strong&gt;hash characters (#)&lt;/strong&gt; at the start of the line, corresponding to &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; - &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
+&lt;h4&gt;atx 样式&lt;/h4&gt;
+&lt;p&gt;HTML 标签：&lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;h2&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;h3&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;h4&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;h5&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在行首使用 1-6 个&lt;strong&gt;井号（#）&lt;/strong&gt;，对应 &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; - &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;# This is an H1
 ## This is an H2
 ###### This is an H6
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h1&gt;This is an H1&lt;/h1&gt;
 &lt;h2&gt;This is an H2&lt;/h2&gt;
 &lt;h6&gt;This is an H6&lt;/h6&gt;
 &lt;hr /&gt;
-&lt;p&gt;Optionally, you may &quot;close&quot; atx-style headers. The closing hashes &lt;strong&gt;don&apos;t need to match&lt;/strong&gt; the number of hashes used to open the header.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
+&lt;p&gt;你也可以选择&quot;闭合&quot;atx 样式的标题。结尾的井号&lt;strong&gt;不需要匹配&lt;/strong&gt;开头井号的数量。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;# This is an H1 #
 ## This is an H2 ##
 ### This is an H3 ######
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h1&gt;This is an H1&lt;/h1&gt;
 &lt;h2&gt;This is an H2&lt;/h2&gt;
 &lt;h3&gt;This is an H3&lt;/h3&gt;
 &lt;hr /&gt;
-&lt;h3&gt;Blockquotes&lt;/h3&gt;
-&lt;p&gt;HTML Tag: &lt;code&gt;&amp;lt;blockquote&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Markdown uses email-style &lt;strong&gt;&amp;gt;&lt;/strong&gt; characters for blockquoting. It looks best if you hard wrap the text and put a &amp;gt; before every line.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-&amp;gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-&amp;gt; Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+&lt;h3&gt;块引用&lt;/h3&gt;
+&lt;p&gt;HTML 标签：&lt;code&gt;&amp;lt;blockquote&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Markdown 使用电子邮件风格的 &lt;strong&gt;&amp;gt;&lt;/strong&gt; 符号创建块引用。最好将文本手动换行，并在每一行前面加上 &amp;gt;。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; 这是一个带有两个段落的块引用。这只是示例文本，
+&amp;gt; 用于展示块引用的样式。你可以在这里放任意内容。
 &amp;gt;
-&amp;gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-&amp;gt; id sem consectetuer libero luctus adipiscing.
+&amp;gt; 第二段内容。同样只是示例填充文本。
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.&lt;/p&gt;
-&lt;p&gt;Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-id sem consectetuer libero luctus adipiscing.&lt;/p&gt;
+&lt;p&gt;这是一个带有两个段落的块引用。这只是示例文本，
+用于展示块引用的样式。你可以在这里放任意内容。&lt;/p&gt;
+&lt;p&gt;第二段内容。同样只是示例填充文本。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr /&gt;
-&lt;p&gt;Markdown allows you to be lazy and only put the &amp;gt; before the first line of a hard-wrapped paragraph.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+&lt;p&gt;Markdown 允许你偷懒，只在硬换行段落的第一行前加 &amp;gt;。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; 这是一个带有两个段落的块引用。这只是示例文本，
+用于展示块引用的样式。
 
-&amp;gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-id sem consectetuer libero luctus adipiscing.
+&amp;gt; 第二段内容。同样只是示例填充文本。
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.&lt;/p&gt;
+&lt;p&gt;这是一个带有两个段落的块引用。这只是示例文本，
+用于展示块引用的样式。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-id sem consectetuer libero luctus adipiscing.&lt;/p&gt;
+&lt;p&gt;第二段内容。同样只是示例填充文本。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr /&gt;
-&lt;p&gt;Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by adding additional levels of &amp;gt;.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt; This is the first level of quoting.
+&lt;p&gt;块引用可以嵌套（即引用中的引用），通过添加更多层级的 &amp;gt; 实现。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; 这是第一层引用。
 &amp;gt;
-&amp;gt; &amp;gt; This is nested blockquote.
+&amp;gt; &amp;gt; 这是嵌套的块引用。
 &amp;gt;
-&amp;gt; Back to the first level.
+&amp;gt; 回到第一层。
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This is the first level of quoting.&lt;/p&gt;
+&lt;p&gt;这是第一层引用。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This is nested blockquote.&lt;/p&gt;
+&lt;p&gt;这是嵌套的块引用。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Back to the first level.&lt;/p&gt;
+&lt;p&gt;回到第一层。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr /&gt;
-&lt;p&gt;Blockquotes can contain other Markdown elements, including headers, lists, and code blocks.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt; ## This is a header.
+&lt;p&gt;块引用可以包含其他 Markdown 元素，包括标题、列表和代码块。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; ## 这是一个标题。
 &amp;gt;
-&amp;gt; 1.   This is the first list item.
-&amp;gt; 2.   This is the second list item.
+&amp;gt; 1.   这是第一个列表项。
+&amp;gt; 2.   这是第二个列表项。
 &amp;gt;
-&amp;gt; Here&apos;s some example code:
+&amp;gt; 下面是一个代码示例：
 &amp;gt;
 &amp;gt;     return shell_exec(&quot;echo $input | $markdown_script&quot;);
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
 &lt;blockquote&gt;
-&lt;h2&gt;This is a header.&lt;/h2&gt;
+&lt;h2&gt;这是一个标题。&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;This is the first list item.&lt;/li&gt;
-&lt;li&gt;This is the second list item.&lt;/li&gt;
+&lt;li&gt;这是第一个列表项。&lt;/li&gt;
+&lt;li&gt;这是第二个列表项。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Here&apos;s some example code:&lt;/p&gt;
+&lt;p&gt;下面是一个代码示例：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;return shell_exec(&quot;echo $input | $markdown_script&quot;);
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
 &lt;hr /&gt;
-&lt;h3&gt;Lists&lt;/h3&gt;
-&lt;p&gt;Markdown supports ordered (numbered) and unordered (bulleted) lists.&lt;/p&gt;
-&lt;h4&gt;Unordered&lt;/h4&gt;
-&lt;p&gt;HTML Tag: &lt;code&gt;&amp;lt;ul&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Unordered lists use &lt;strong&gt;asterisks (*)&lt;/strong&gt;, &lt;strong&gt;pluses (+)&lt;/strong&gt;, and &lt;strong&gt;hyphens (-)&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;*   Red
-*   Green
-*   Blue
+&lt;h3&gt;列表&lt;/h3&gt;
+&lt;p&gt;Markdown 支持有序（编号）和无序（项目符号）列表。&lt;/p&gt;
+&lt;h4&gt;无序列表&lt;/h4&gt;
+&lt;p&gt;HTML 标签：&lt;code&gt;&amp;lt;ul&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;无序列表使用&lt;strong&gt;星号（*）&lt;/strong&gt;、&lt;strong&gt;加号（+）&lt;strong&gt;和&lt;/strong&gt;减号（-）&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;*   红色
+*   绿色
+*   蓝色
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;Red&lt;/li&gt;
-&lt;li&gt;Green&lt;/li&gt;
-&lt;li&gt;Blue&lt;/li&gt;
+&lt;li&gt;红色&lt;/li&gt;
+&lt;li&gt;绿色&lt;/li&gt;
+&lt;li&gt;蓝色&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
-&lt;p&gt;is equivalent to:&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;+   Red
-+   Green
-+   Blue
+&lt;p&gt;等同于：&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;+   红色
++   绿色
++   蓝色
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;and:&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;-   Red
--   Green
--   Blue
+&lt;p&gt;和：&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;-   红色
+-   绿色
+-   蓝色
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;Ordered&lt;/h4&gt;
-&lt;p&gt;HTML Tag: &lt;code&gt;&amp;lt;ol&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Ordered lists use numbers followed by periods:&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
+&lt;h4&gt;有序列表&lt;/h4&gt;
+&lt;p&gt;HTML 标签：&lt;code&gt;&amp;lt;ol&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;有序列表使用数字后跟句点：&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;1.  Bird
 2.  McHale
 3.  Parish
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
 &lt;li&gt;Bird&lt;/li&gt;
@@ -230,71 +222,71 @@ id sem consectetuer libero luctus adipiscing.&lt;/p&gt;
 &lt;li&gt;Parish&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
-&lt;p&gt;It&apos;s possible to trigger an ordered list by accident, by writing something like this:&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
+&lt;p&gt;有时你可能不小心触发了有序列表，比如写这样的内容：&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;1986. What a great season.
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
 &lt;li&gt;What a great season.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
-&lt;p&gt;You can &lt;strong&gt;backslash-escape (\)&lt;/strong&gt; the period:&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
+&lt;p&gt;你可以用**反斜杠（\）**转义句点：&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;1986\. What a great season.
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;1986. What a great season.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h4&gt;Indented&lt;/h4&gt;
-&lt;h5&gt;Blockquote&lt;/h5&gt;
-&lt;p&gt;To put a blockquote within a list item, the blockquote&apos;s &amp;gt; delimiters need to be indented:&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;*   A list item with a blockquote:
+&lt;h4&gt;缩进内容&lt;/h4&gt;
+&lt;h5&gt;块引用&lt;/h5&gt;
+&lt;p&gt;要在列表项中放入块引用，块引用的 &amp;gt; 分隔符需要缩进：&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;*   包含块引用的列表项：
 
-    &amp;gt; This is a blockquote
-    &amp;gt; inside a list item.
+    &amp;gt; 这是一个块引用
+    &amp;gt; 在列表项内。
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;A list item with a blockquote:&lt;/p&gt;
+&lt;p&gt;包含块引用的列表项：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This is a blockquote
-inside a list item.&lt;/p&gt;
+&lt;p&gt;这是一个块引用
+在列表项内。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
-&lt;h5&gt;Code Block&lt;/h5&gt;
-&lt;p&gt;To put a code block within a list item, the code block needs to be indented twice — &lt;strong&gt;8 spaces&lt;/strong&gt; or &lt;strong&gt;two tabs&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;*   A list item with a code block:
+&lt;h5&gt;代码块&lt;/h5&gt;
+&lt;p&gt;要在列表项中放入代码块，代码块需要缩进两次——&lt;strong&gt;8 个空格&lt;/strong&gt;或&lt;strong&gt;两个制表符&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;*   包含代码块的列表项：
 
         &amp;lt;code goes here&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;A list item with a code block:&lt;/p&gt;
+&lt;p&gt;包含代码块的列表项：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;code goes here&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
-&lt;h5&gt;Nested List&lt;/h5&gt;
-&lt;p&gt;Code:&lt;/p&gt;
+&lt;h5&gt;嵌套列表&lt;/h5&gt;
+&lt;p&gt;代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;* A
   * A1
   * A2
 * B
 * C
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;A
@@ -307,74 +299,74 @@ inside a list item.&lt;/p&gt;
 &lt;li&gt;C&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
-&lt;h3&gt;Code Blocks&lt;/h3&gt;
-&lt;p&gt;HTML Tag: &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Indent every line of the block by at least &lt;strong&gt;4 spaces&lt;/strong&gt; or &lt;strong&gt;1 tab&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;This is a normal paragraph:
+&lt;h3&gt;代码块&lt;/h3&gt;
+&lt;p&gt;HTML 标签：&lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;将代码块的每一行缩进至少 &lt;strong&gt;4 个空格&lt;/strong&gt;或 &lt;strong&gt;1 个制表符&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;这是一个普通段落：
 
-    This is a code block.
+    这是一个代码块。
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;This is a normal paragraph:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;This is a code block.
+&lt;p&gt;这是一个普通段落：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;这是一个代码块。
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr /&gt;
-&lt;p&gt;A code block continues until it reaches a line that is not indented (or the end of the article).&lt;/p&gt;
-&lt;p&gt;Within a code block, &lt;strong&gt;&lt;em&gt;ampersands (&amp;amp;)&lt;/em&gt;&lt;/strong&gt; and angle &lt;strong&gt;brackets (&amp;lt; and &amp;gt;)&lt;/strong&gt; are automatically converted into HTML entities.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
+&lt;p&gt;代码块持续到遇到一个没有缩进的行（或文章结束）。&lt;/p&gt;
+&lt;p&gt;在代码块中，**与符号（&amp;amp;）&lt;strong&gt;和尖&lt;/strong&gt;括号（&amp;lt; 和 &amp;gt;）**会自动转换为 HTML 实体。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;    &amp;lt;div class=&quot;footer&quot;&amp;gt;
         &amp;amp;copy; 2004 Foo Corporation
     &amp;lt;/div&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;div class=&quot;footer&quot;&amp;gt;
     &amp;amp;copy; 2004 Foo Corporation
 &amp;lt;/div&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr /&gt;
-&lt;p&gt;Following sections Fenced Code Blocks and Syntax Highlighting are extensions, you can use the other way to write the code block.&lt;/p&gt;
-&lt;h4&gt;Fenced Code Blocks&lt;/h4&gt;
-&lt;p&gt;Just wrap your code in &lt;code&gt;```&lt;/code&gt; (as shown below) and you won&apos;t need to indent it by four spaces.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Here&apos;s an example:
+&lt;p&gt;以下围栏代码块和语法高亮部分属于扩展功能，你可以用另一种方式编写代码块。&lt;/p&gt;
+&lt;h4&gt;围栏代码块&lt;/h4&gt;
+&lt;p&gt;只需用 &lt;code&gt;```&lt;/code&gt; 包裹代码（如下所示），就不需要缩进四个空格了。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;下面是一个示例：
 
 ```
 function test() {
-  console.log(&quot;notice the blank line before this function?&quot;);
+  console.log(&quot;注意这个函数前面的空行？&quot;);
 }
 ```
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;Here&apos;s an example:&lt;/p&gt;
+&lt;p&gt;下面是一个示例：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;function test() {
-  console.log(&quot;notice the blank line before this function?&quot;);
+  console.log(&quot;注意这个函数前面的空行？&quot;);
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr /&gt;
-&lt;h4&gt;Syntax Highlighting&lt;/h4&gt;
-&lt;p&gt;In your fenced block, add an optional language identifier and we&apos;ll run it through syntax highlighting (&lt;a href=&quot;https://github.com/github/linguist/blob/master/lib/linguist/languages.yml&quot;&gt;Support Languages&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
+&lt;h4&gt;语法高亮&lt;/h4&gt;
+&lt;p&gt;在围栏代码块中添加可选的语言标识符，就会启用语法高亮（&lt;a href=&quot;https://github.com/github/linguist/blob/master/lib/linguist/languages.yml&quot;&gt;支持的语言列表&lt;/a&gt;）。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;```ruby
 require &apos;redcarpet&apos;
 markdown = Redcarpet.new(&quot;Hello World!&quot;)
 puts markdown.to_html
 ```
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
 &lt;pre&gt;&lt;code&gt;require &apos;redcarpet&apos;
 markdown = Redcarpet.new(&quot;Hello World!&quot;)
 puts markdown.to_html
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr /&gt;
-&lt;h3&gt;Horizontal Rules&lt;/h3&gt;
-&lt;p&gt;HTML Tag: &lt;code&gt;&amp;lt;hr /&amp;gt;&lt;/code&gt;
-Places &lt;strong&gt;three or more hyphens (-), asterisks (*), or underscores (_)&lt;/strong&gt; on a line by themselves. You may use spaces between the hyphens or asterisks.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
+&lt;h3&gt;水平分割线&lt;/h3&gt;
+&lt;p&gt;HTML 标签：&lt;code&gt;&amp;lt;hr /&amp;gt;&lt;/code&gt;
+在一行上放置&lt;strong&gt;三个或更多的连字符（-）、星号（*）或下划线（_）&lt;/strong&gt;。可以在连字符或星号之间使用空格。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;* * *
 ***
 *****
@@ -382,7 +374,7 @@ Places &lt;strong&gt;three or more hyphens (-), asterisks (*), or underscores (_
 ---------------------------------------
 ___
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
 &lt;hr /&gt;
 &lt;hr /&gt;
@@ -391,16 +383,17 @@ ___
 &lt;hr /&gt;
 &lt;hr /&gt;
 &lt;hr /&gt;
-&lt;h3&gt;Table&lt;/h3&gt;
-&lt;p&gt;HTML Tag: &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;It&apos;s an extension.&lt;/p&gt;
-&lt;p&gt;Separates column by &lt;strong&gt;pipe (|)&lt;/strong&gt; and header by &lt;strong&gt;dashes (-)&lt;/strong&gt;, and uses &lt;strong&gt;colon (:)&lt;/strong&gt; for alignment.&lt;/p&gt;
-&lt;p&gt;The outer &lt;strong&gt;pipes (|)&lt;/strong&gt; and alignment are optional. There are &lt;strong&gt;3 delimiters&lt;/strong&gt; each cell at least for separating header.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;| Left | Center | Right |
-|:-----|:------:|------:|
-|aaa   |bbb     |ccc    |
-|ddd   |eee     |fff    |
+&lt;hr /&gt;
+&lt;h3&gt;表格&lt;/h3&gt;
+&lt;p&gt;HTML 标签：&lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这是一个扩展功能。&lt;/p&gt;
+&lt;p&gt;使用**竖线（|）**分隔列，**连字符（-）&lt;strong&gt;分隔表头，用&lt;/strong&gt;冒号（:）**控制对齐。&lt;/p&gt;
+&lt;p&gt;外侧的**竖线（|）**和对齐方式是可选的。分隔表头时每列至少需要 &lt;strong&gt;3 个分隔符&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;| 左对齐 | 居中对齐 | 右对齐 |
+|:-------|:--------:|-------:|
+|aaa     |bbb       |ccc     |
+|ddd     |eee       |fff     |
 
  A | B
 ---|---
@@ -411,14 +404,14 @@ A |B
 --|--
 12|45
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;Left&lt;/th&gt;
-&lt;th&gt;Center&lt;/th&gt;
-&lt;th&gt;Right&lt;/th&gt;
+&lt;th&gt;左对齐&lt;/th&gt;
+&lt;th&gt;居中对齐&lt;/th&gt;
+&lt;th&gt;右对齐&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
@@ -463,216 +456,216 @@ A |B
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;hr /&gt;
-&lt;h2&gt;Span Elements&lt;/h2&gt;
-&lt;h3&gt;Links&lt;/h3&gt;
-&lt;p&gt;HTML Tag: &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Markdown supports two style of links: inline and reference.&lt;/p&gt;
-&lt;h4&gt;Inline&lt;/h4&gt;
-&lt;p&gt;Inline link format like this: &lt;code&gt;[Link Text](URL &quot;Title&quot;)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Title is optional.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;This is [an example](http://example.com/ &quot;Title&quot;) inline link.
+&lt;h2&gt;行内元素&lt;/h2&gt;
+&lt;h3&gt;链接&lt;/h3&gt;
+&lt;p&gt;HTML 标签：&lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Markdown 支持两种链接样式：内联和引用。&lt;/p&gt;
+&lt;h4&gt;内联链接&lt;/h4&gt;
+&lt;p&gt;内联链接格式：&lt;code&gt;[链接文字](URL &quot;标题&quot;)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;标题为可选。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;这是一个内联链接[示例](http://example.com/ &quot;Title&quot;)。
 
-[This link](http://example.net/) has no title attribute.
+[这个链接](http://example.net/)没有标题属性。
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;This is &lt;a href=&quot;http://example.com/&quot;&gt;an example&lt;/a&gt; inline link.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://example.net/&quot;&gt;This link&lt;/a&gt; has no title attribute.&lt;/p&gt;
+&lt;p&gt;这是一个内联链接&lt;a href=&quot;http://example.com/&quot;&gt;示例&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://example.net/&quot;&gt;这个链接&lt;/a&gt;没有标题属性。&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;If you&apos;re referring to a local resource on the same server, you can use relative paths:&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;See my [About](/about/) page for details.
+&lt;p&gt;如果是引用同一服务器上的本地资源，可以使用相对路径：&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;详情请参见我的[关于](/about/)页面。
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;See my &lt;a href=&quot;/about/&quot;&gt;About&lt;/a&gt; page for details.&lt;/p&gt;
+&lt;p&gt;详情请参见我的&lt;a href=&quot;/about/&quot;&gt;关于&lt;/a&gt;页面。&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h4&gt;Reference&lt;/h4&gt;
-&lt;p&gt;You could predefine link references. Format like this: &lt;code&gt;[id]: URL &quot;Title&quot;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Title is also optional. And the you refer the link, format like this: &lt;code&gt;[Link Text][id]&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
+&lt;h4&gt;引用链接&lt;/h4&gt;
+&lt;p&gt;你可以预定义链接引用。格式：&lt;code&gt;[id]: URL &quot;Title&quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;标题为可选。然后引用链接，格式：&lt;code&gt;[链接文字][id]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;[id]: http://example.com/  &quot;Optional Title Here&quot;
-This is [an example][id] reference-style link.
+这是一个引用[示例][id]链接。
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;This is &lt;a href=&quot;http://example.com/&quot;&gt;an example&lt;/a&gt; reference-style link.&lt;/p&gt;
+&lt;p&gt;这是一个引用&lt;a href=&quot;http://example.com/&quot;&gt;示例&lt;/a&gt;链接。&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;That is:&lt;/p&gt;
+&lt;p&gt;即：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Square brackets containing the link identifier (&lt;strong&gt;not case sensitive&lt;/strong&gt;, optionally indented from the left margin using up to three spaces);&lt;/li&gt;
-&lt;li&gt;followed by a colon;&lt;/li&gt;
-&lt;li&gt;followed by one or more spaces (or tabs);&lt;/li&gt;
-&lt;li&gt;followed by the URL for the link;&lt;/li&gt;
-&lt;li&gt;The link URL may, optionally, be surrounded by angle brackets.&lt;/li&gt;
-&lt;li&gt;optionally followed by a title attribute for the link, enclosed in double or single quotes, or enclosed in parentheses.&lt;/li&gt;
+&lt;li&gt;方括号内包含链接标识符（&lt;strong&gt;不区分大小写&lt;/strong&gt;，可选在左边距缩进最多三个空格）；&lt;/li&gt;
+&lt;li&gt;后跟冒号；&lt;/li&gt;
+&lt;li&gt;后跟一个或多个空格（或制表符）；&lt;/li&gt;
+&lt;li&gt;后跟链接的 URL；&lt;/li&gt;
+&lt;li&gt;URL 可以选择用尖括号括起来。&lt;/li&gt;
+&lt;li&gt;可选后跟链接的标题属性，用双引号、单引号或括号括起来。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The following three link definitions are equivalent:&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
+&lt;p&gt;以下三个链接定义是等价的：&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;[foo]: http://example.com/  &quot;Optional Title Here&quot;
 [foo]: http://example.com/  &apos;Optional Title Here&apos;
 [foo]: http://example.com/  (Optional Title Here)
 [foo]: &amp;lt;http://example.com/&amp;gt;  &quot;Optional Title Here&quot;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Uses an empty set of square brackets, the link text itself is used as the name.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
+&lt;p&gt;使用空方括号集时，链接文字本身用作名称。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;[Google]: http://google.com/
 [Google][]
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;a href=&quot;http://google.com/&quot;&gt;Google&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h3&gt;Emphasis&lt;/h3&gt;
-&lt;p&gt;HTML Tags: &lt;code&gt;&amp;lt;em&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;strong&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Markdown treats &lt;strong&gt;asterisks (*)&lt;/strong&gt; and &lt;strong&gt;underscores (_)&lt;/strong&gt; as indicators of emphasis. &lt;strong&gt;One delimiter&lt;/strong&gt; will be &lt;code&gt;&amp;lt;em&amp;gt;&lt;/code&gt;; *&lt;em&gt;double delimiters&lt;/em&gt; will be &lt;code&gt;&amp;lt;strong&amp;gt;&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;*single asterisks*
+&lt;h3&gt;强调&lt;/h3&gt;
+&lt;p&gt;HTML 标签：&lt;code&gt;&amp;lt;em&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;strong&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Markdown 将**星号（*）&lt;strong&gt;和&lt;/strong&gt;下划线（_）**视为强调标记。&lt;strong&gt;一个分隔符&lt;/strong&gt;表示 &lt;code&gt;&amp;lt;em&amp;gt;&lt;/code&gt;；&lt;strong&gt;两个分隔符&lt;/strong&gt;表示 &lt;code&gt;&amp;lt;strong&amp;gt;&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;*单个星号*
 
-_single underscores_
+_单个下划线_
 
-**double asterisks**
+**两个星号**
 
-__double underscores__
+__两个下划线__
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;em&gt;single asterisks&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;single underscores&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;double asterisks&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;double underscores&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;单个星号&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;单个下划线&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;两个星号&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;两个下划线&lt;/strong&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;But if you surround an * or _ with spaces, it&apos;ll be treated as a literal asterisk or underscore.&lt;/p&gt;
-&lt;p&gt;You can backslash escape it:&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;\*this text is surrounded by literal asterisks\*
+&lt;p&gt;但如果将 * 或 _ 用空格包围，它会被视为字面量的星号或下划线。&lt;/p&gt;
+&lt;p&gt;你可以用反斜杠转义：&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\*这串文字被字面星号包围\*
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;*this text is surrounded by literal asterisks*&lt;/p&gt;
+&lt;p&gt;*这串文字被字面星号包围*&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h3&gt;Code&lt;/h3&gt;
-&lt;p&gt;HTML Tag: &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Wraps it with &lt;strong&gt;backtick quotes (`)&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Use the `printf()` function.
+&lt;h3&gt;代码&lt;/h3&gt;
+&lt;p&gt;HTML 标签：&lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;用**反引号（`）**包裹。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;使用 `printf()` 函数。
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;Use the &lt;code&gt;printf()&lt;/code&gt; function.&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;printf()&lt;/code&gt; 函数。&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;To include a literal backtick character within a code span, you can use &lt;strong&gt;multiple backticks&lt;/strong&gt; as the opening and closing delimiters:&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;``There is a literal backtick (`) here.``
+&lt;p&gt;要在代码范围中包含字面反引号，可以使用&lt;strong&gt;多个反引号&lt;/strong&gt;作为开始和结束分隔符：&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;``这里有一个字面反引号（`）字符。``
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;code&gt;There is a literal backtick (`) here.&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;这里有一个字面反引号（`）字符。&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;The backtick delimiters surrounding a code span may include spaces — one after the opening, one before the closing. This allows you to place literal backtick characters at the beginning or end of a code span:&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;A single backtick in a code span: `` ` ``
+&lt;p&gt;包围代码范围的反引号分隔符可以包含空格——开头后、结束前各一个。这样就可以在代码范围的开始或结尾放置字面反引号字符：&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;代码范围中的单个反引号：`` ` ``
 
-A backtick-delimited string in a code span: `` `foo` ``
+代码范围中的反引号包裹字符串：`` `foo` ``
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;A single backtick in a code span: &lt;code&gt;`&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;A backtick-delimited string in a code span: &lt;code&gt;`foo`&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;代码范围中的单个反引号：&lt;code&gt;`&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;代码范围中的反引号包裹字符串：&lt;code&gt;`foo`&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h3&gt;Images&lt;/h3&gt;
-&lt;p&gt;HTML Tag: &lt;code&gt;&amp;lt;img /&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Markdown uses an image syntax that is intended to resemble the syntax for links, allowing for two styles: inline and reference.&lt;/p&gt;
-&lt;h4&gt;Inline&lt;/h4&gt;
-&lt;p&gt;Inline image syntax looks like this: &lt;code&gt;![Alt text](URL &quot;Title&quot;)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Title is optional.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;![Alt text](/path/to/img.jpg)
+&lt;h3&gt;图片&lt;/h3&gt;
+&lt;p&gt;HTML 标签：&lt;code&gt;&amp;lt;img /&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Markdown 的图片语法类似于链接语法，支持两种样式：内联和引用。&lt;/p&gt;
+&lt;h4&gt;内联图片&lt;/h4&gt;
+&lt;p&gt;内联图片格式：&lt;code&gt;![替代文字](URL &quot;标题&quot;)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;标题为可选。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;![替代文字](/path/to/img.jpg)
 
-![Alt text](/path/to/img.jpg &quot;Optional title&quot;)
+![替代文字](/path/to/img.jpg &quot;可选标题&quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2024/08/20/5fszgXeOxmL3Wdv.webp&quot; alt=&quot;Alt text&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2024/08/20/5fszgXeOxmL3Wdv.webp&quot; alt=&quot;Alt text&quot; title=&quot;Optional title&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2024/08/20/5fszgXeOxmL3Wdv.webp&quot; alt=&quot;替代文字&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2024/08/20/5fszgXeOxmL3Wdv.webp&quot; alt=&quot;替代文字&quot; title=&quot;可选标题&quot; /&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;That is:&lt;/p&gt;
+&lt;p&gt;即：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;An exclamation mark: !;&lt;/li&gt;
-&lt;li&gt;followed by a set of square brackets, containing the alt attribute text for the image;&lt;/li&gt;
-&lt;li&gt;followed by a set of parentheses, containing the URL or path to the image, and an optional title attribute enclosed in double or single quotes.&lt;/li&gt;
+&lt;li&gt;一个感叹号：!；&lt;/li&gt;
+&lt;li&gt;后跟一组方括号，包含图片的替代文字；&lt;/li&gt;
+&lt;li&gt;后跟一组圆括号，包含图片的 URL 或路径，以及可选的标题属性（用双引号或单引号括起来）。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;Reference&lt;/h4&gt;
-&lt;p&gt;Reference-style image syntax looks like this: &lt;code&gt;![Alt text][id]&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[img id]: https://s2.loli.net/2024/08/20/5fszgXeOxmL3Wdv.webp  &quot;Optional title attribute&quot;
-![Alt text][img id]
+&lt;h4&gt;引用图片&lt;/h4&gt;
+&lt;p&gt;引用风格的图片格式：&lt;code&gt;![替代文字][id]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[img id]: https://s2.loli.net/2024/08/20/5fszgXeOxmL3Wdv.webp  &quot;可选标题属性&quot;
+![替代文字][img id]
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2024/08/20/5fszgXeOxmL3Wdv.webp&quot; alt=&quot;Alt text&quot; title=&quot;Optional title attribute&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2024/08/20/5fszgXeOxmL3Wdv.webp&quot; alt=&quot;替代文字&quot; title=&quot;可选标题属性&quot; /&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h3&gt;Strikethrough&lt;/h3&gt;
-&lt;p&gt;HTML Tag: &lt;code&gt;&amp;lt;del&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;It&apos;s an extension.&lt;/p&gt;
-&lt;p&gt;GFM adds syntax to strikethrough text.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;~~Mistaken text.~~
+&lt;h3&gt;删除线&lt;/h3&gt;
+&lt;p&gt;HTML 标签：&lt;code&gt;&amp;lt;del&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这是一个扩展功能。&lt;/p&gt;
+&lt;p&gt;GFM 为删除线文本添加了语法。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;~~错误文字。~~
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;s&gt;Mistaken text.&lt;/s&gt;&lt;/p&gt;
+&lt;p&gt;&lt;s&gt;错误文字。&lt;/s&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h2&gt;Miscellaneous&lt;/h2&gt;
-&lt;h3&gt;Automatic Links&lt;/h3&gt;
-&lt;p&gt;Markdown supports a shortcut style for creating &quot;automatic&quot; links for URLs and email addresses: simply surround the URL or email address with angle brackets.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
+&lt;h2&gt;其他&lt;/h2&gt;
+&lt;h3&gt;自动链接&lt;/h3&gt;
+&lt;p&gt;Markdown 支持为 URL 和电子邮件地址创建&quot;自动&quot;链接的快捷方式：只需用尖括号包围 URL 或电子邮件地址。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;http://example.com/&amp;gt;
 
 &amp;lt;address@example.com&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;a href=&quot;http://example.com/&quot;&gt;http://example.com/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;mailto:address@example.com&quot;&gt;address@example.com&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;GFM will autolink standard URLs.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
+&lt;p&gt;GFM 会自动链接标准 URL。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;https://github.com/emn178/markdown
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;https://github.com/emn178/markdown&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h3&gt;Backslash Escapes&lt;/h3&gt;
-&lt;p&gt;Markdown allows you to use backslash escapes to generate literal characters which would otherwise have special meaning in Markdown&apos;s formatting syntax.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;\*literal asterisks\*
+&lt;h3&gt;反斜杠转义&lt;/h3&gt;
+&lt;p&gt;Markdown 允许使用反斜杠转义来生成原本具有特殊格式含义的字面字符。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\*字面星号\*
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;*literal asterisks*&lt;/p&gt;
+&lt;p&gt;*字面星号*&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;Markdown provides backslash escapes for the following characters:&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;\   backslash
-`   backtick
-*   asterisk
-_   underscore
-{}  curly braces
-[]  square brackets
-()  parentheses
-#   hash mark
-+   plus sign
--   minus sign (hyphen)
-.   dot
-!   exclamation mark
+&lt;p&gt;Markdown 支持转义以下字符：&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\   反斜杠
+`   反引号
+*   星号
+_   下划线
+{}  花括号
+[]  方括号
+()  圆括号
+#   井号
++   加号
+-   减号（连字符）
+.   句点
+!   感叹号
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;Inline HTML&lt;/h2&gt;
-&lt;p&gt;For any markup that is not covered by Markdown&apos;s syntax, you simply use HTML itself. There&apos;s no need to preface it or delimit it to indicate that you&apos;re switching from Markdown to HTML; you just use the tags.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;This is a regular paragraph.
+&lt;h2&gt;内联 HTML&lt;/h2&gt;
+&lt;p&gt;对于 Markdown 语法未涵盖的任何标记，直接使用 HTML 即可。不需要添加前缀或分隔符来标示正在从 Markdown 切换到 HTML；直接使用标签就好。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;这是一个普通段落。
 
 &amp;lt;table&amp;gt;
     &amp;lt;tr&amp;gt;
@@ -680,92 +673,93 @@ _   underscore
     &amp;lt;/tr&amp;gt;
 &amp;lt;/table&amp;gt;
 
-This is another regular paragraph.
+这是另一个普通段落。
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;This is a regular paragraph.&lt;/p&gt;
+&lt;p&gt;这是一个普通段落。&lt;/p&gt;
 &lt;p&gt;&amp;lt;table&amp;gt;
 &amp;lt;tr&amp;gt;
 &amp;lt;td&amp;gt;Foo&amp;lt;/td&amp;gt;
 &amp;lt;/tr&amp;gt;
 &amp;lt;/table&amp;gt;&lt;/p&gt;
-&lt;p&gt;This is another regular paragraph.&lt;/p&gt;
+&lt;p&gt;这是另一个普通段落。&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;Note that Markdown formatting syntax is &lt;strong&gt;not processed within block-level HTML tags&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Unlike block-level HTML tags, Markdown syntax is &lt;strong&gt;processed within span-level tags&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Code:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;span&amp;gt;**Work**&amp;lt;/span&amp;gt;
+&lt;p&gt;请注意，Markdown 格式化语法在&lt;strong&gt;块级 HTML 标签内不会被处理&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;与块级 HTML 标签不同，Markdown 语法在&lt;strong&gt;行内标签内会被处理&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;span&amp;gt;**生效**&amp;lt;/span&amp;gt;
 
 &amp;lt;div&amp;gt;
-    **No Work**
+    **不生效**
 &amp;lt;/div&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;预览：&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;&amp;lt;span&amp;gt;&lt;strong&gt;Work&lt;/strong&gt;&amp;lt;/span&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;span&amp;gt;&lt;strong&gt;生效&lt;/strong&gt;&amp;lt;/span&amp;gt;&lt;/p&gt;
 &lt;p&gt;&amp;lt;div&amp;gt;
-&lt;strong&gt;No Work&lt;/strong&gt;
+&lt;strong&gt;不生效&lt;/strong&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
 &lt;hr /&gt;
-</content:encoded></item><item><title>Markdown Extended Features</title><link>https://arcoiris.cn/posts/markdown-extended/</link><guid isPermaLink="true">https://arcoiris.cn/posts/markdown-extended/</guid><description>Read more about Markdown features in Mizuki</description><pubDate>Wed, 01 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;GitHub Repository Cards&lt;/h2&gt;
-&lt;p&gt;You can add dynamic cards that link to GitHub repositories, on page load, the repository information is pulled from the GitHub API.&lt;/p&gt;
+</content:encoded></item><item><title>Markdown 扩展功能</title><link>https://arcoiris.cn/posts/markdown-extended/</link><guid isPermaLink="true">https://arcoiris.cn/posts/markdown-extended/</guid><description>了解 Mizuki 中的 Markdown 扩展功能</description><pubDate>Wed, 01 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;GitHub 仓库卡片&lt;/h2&gt;
+&lt;p&gt;你可以添加指向 GitHub 仓库的动态卡片，页面加载时会从 GitHub API 拉取仓库信息。&lt;/p&gt;
 &lt;p&gt;::github{repo=&quot;LyraVoid/Mizuki&quot;}&lt;/p&gt;
-&lt;p&gt;Create a GitHub repository card with the code &lt;code&gt;::github{repo=&quot;LyraVoid/Mizuki&quot;}&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;使用代码 &lt;code&gt;::github{repo=&quot;LyraVoid/Mizuki&quot;}&lt;/code&gt; 创建 GitHub 仓库卡片。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;::github{repo=&quot;LyraVoid/Mizuki&quot;}
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;Admonitions&lt;/h2&gt;
-&lt;p&gt;Following types of admonitions are supported: &lt;code&gt;note&lt;/code&gt; &lt;code&gt;tip&lt;/code&gt; &lt;code&gt;important&lt;/code&gt; &lt;code&gt;warning&lt;/code&gt; &lt;code&gt;caution&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Admonitions（提示框）&lt;/h2&gt;
+&lt;p&gt;支持以下类型的提示框：&lt;code&gt;note&lt;/code&gt; &lt;code&gt;tip&lt;/code&gt; &lt;code&gt;important&lt;/code&gt; &lt;code&gt;warning&lt;/code&gt; &lt;code&gt;caution&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;:::note
-Highlights information that users should take into account, even when skimming.
+强调用户应留意参考的信息，即便只是快速浏览。
 :::&lt;/p&gt;
 &lt;p&gt;:::tip
-Optional information to help a user be more successful.
+帮助用户更顺利操作的参考信息。
 :::&lt;/p&gt;
 &lt;p&gt;:::important
-Crucial information necessary for users to succeed.
+用户成功操作所必需的关键信息。
 :::&lt;/p&gt;
 &lt;p&gt;:::warning
-Critical content demanding immediate user attention due to potential risks.
+需要用户立即关注的潜在风险内容。
 :::&lt;/p&gt;
 &lt;p&gt;:::caution
-Negative potential consequences of an action.
+操作可能带来的负面后果。
 :::&lt;/p&gt;
-&lt;h3&gt;Basic Syntax&lt;/h3&gt;
+&lt;h3&gt;基本语法&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;:::note
-Highlights information that users should take into account, even when skimming.
+强调用户应留意参考的信息，即便只是快速浏览。
 :::
 
 :::tip
-Optional information to help a user be more successful.
+帮助用户更顺利操作的参考信息。
 :::
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Custom Titles&lt;/h3&gt;
-&lt;p&gt;The title of the admonition can be customized.&lt;/p&gt;
-&lt;p&gt;:::note[MY CUSTOM TITLE]
-This is a note with a custom title.
+&lt;h3&gt;自定义标题&lt;/h3&gt;
+&lt;p&gt;提示框的标题可以自定义。&lt;/p&gt;
+&lt;p&gt;:::note[我的自定义标题]
+这是一条带有自定义标题的笔记。
 :::&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;:::note[MY CUSTOM TITLE]
-This is a note with a custom title.
+&lt;pre&gt;&lt;code&gt;:::note[我的自定义标题]
+这是一条带有自定义标题的笔记。
 :::
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;GitHub Syntax&lt;/h3&gt;
+&lt;h3&gt;GitHub 语法&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;[!TIP]
-&lt;a href=&quot;https://github.com/orgs/community/discussions/16925&quot;&gt;The GitHub syntax&lt;/a&gt; is also supported.&lt;/p&gt;
+&lt;a href=&quot;https://github.com/orgs/community/discussions/16925&quot;&gt;GitHub 风格的语法&lt;/a&gt; 也支持。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;pre&gt;&lt;code&gt;&amp;gt; [!NOTE]
-&amp;gt; The GitHub syntax is also supported.
+&amp;gt; GitHub 风格的语法也支持。
 
 &amp;gt; [!TIP]
-&amp;gt; The GitHub syntax is also supported.
+&amp;gt; GitHub 风格的语法也支持。
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Spoiler&lt;/h3&gt;
-&lt;p&gt;You can add spoilers to your text. The text also supports &lt;strong&gt;Markdown&lt;/strong&gt; syntax.&lt;/p&gt;
-&lt;p&gt;The content :spoiler[is hidden &lt;strong&gt;ayyy&lt;/strong&gt;]!&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;The content :spoiler[is hidden **ayyy**]!&lt;/code&gt;&lt;/pre&gt;
-</content:encoded></item><item><title>Simple Guides for Mizuki</title><link>https://arcoiris.cn/posts/guide/</link><guid isPermaLink="true">https://arcoiris.cn/posts/guide/</guid><description>How to use this blog template.</description><pubDate>Mon, 01 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This blog template is built with &lt;a href=&quot;https://astro.build/&quot;&gt;Astro&lt;/a&gt;. For the things that are not mentioned in this guide, you may find the answers in the &lt;a href=&quot;https://docs.astro.build/&quot;&gt;Astro Docs&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Front-matter of Posts&lt;/h2&gt;
+&lt;h3&gt;剧透&lt;/h3&gt;
+&lt;p&gt;你可以在文本中添加剧透内容。文本也支持 &lt;strong&gt;Markdown&lt;/strong&gt; 语法。&lt;/p&gt;
+&lt;p&gt;内容 :spoiler[被隐藏了 &lt;strong&gt;嘿嘿&lt;/strong&gt;]！&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;内容 :spoiler[被隐藏了 **嘿嘿**]！
+&lt;/code&gt;&lt;/pre&gt;
+</content:encoded></item><item><title>Mizuki 简易指南</title><link>https://arcoiris.cn/posts/guide/</link><guid isPermaLink="true">https://arcoiris.cn/posts/guide/</guid><description>如何使用此博客模板。</description><pubDate>Mon, 01 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;此博客模板基于 &lt;a href=&quot;https://astro.build/&quot;&gt;Astro&lt;/a&gt; 构建。本指南未提及的内容，可在 &lt;a href=&quot;https://docs.astro.build/&quot;&gt;Astro 文档&lt;/a&gt; 中找到答案。&lt;/p&gt;
+&lt;h2&gt;文章的 Front-matter&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;---
 title: My First Blog Post
 published: 2023-09-09
@@ -779,147 +773,147 @@ draft: false
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;Attribute&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;属性&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;title&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;The title of the post.&lt;/td&gt;
+&lt;td&gt;文章标题。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;published&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;The date the post was published.&lt;/td&gt;
+&lt;td&gt;文章发布日期。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;pinned&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Whether this post is pinned to the top of the post list.&lt;/td&gt;
+&lt;td&gt;是否将文章置顶到文章列表顶部。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;priority&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;The priority of the pinned post. Smaller value means higher priority (0, 1, 2...).&lt;/td&gt;
+&lt;td&gt;置顶文章的优先级，数值越小优先级越高（0, 1, 2...）。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;description&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;A short description of the post. Displayed on index page.&lt;/td&gt;
+&lt;td&gt;文章的简短描述，显示在首页。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;image&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;The cover image path of the post.&amp;lt;br/&amp;gt;1. Start with &lt;code&gt;http://&lt;/code&gt; or &lt;code&gt;https://&lt;/code&gt;: Use web image&amp;lt;br/&amp;gt;2. Start with &lt;code&gt;/&lt;/code&gt;: For image in &lt;code&gt;public&lt;/code&gt; dir&amp;lt;br/&amp;gt;3. With none of the prefixes: Relative to the markdown file&lt;/td&gt;
+&lt;td&gt;文章的封面图路径。&amp;lt;br/&amp;gt;1. 以 &lt;code&gt;http://&lt;/code&gt; 或 &lt;code&gt;https://&lt;/code&gt; 开头：使用网络图片&amp;lt;br/&amp;gt;2. 以 &lt;code&gt;/&lt;/code&gt; 开头：图片在 &lt;code&gt;public&lt;/code&gt; 目录下&amp;lt;br/&amp;gt;3. 无前缀：相对于 Markdown 文件所在目录&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;tags&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;The tags of the post.&lt;/td&gt;
+&lt;td&gt;文章的标签。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;category&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;The category of the post.&lt;/td&gt;
+&lt;td&gt;文章的分类。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;licenseName&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;The license name for the post content.&lt;/td&gt;
+&lt;td&gt;文章内容的许可协议名称。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;author&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;The author of the post.&lt;/td&gt;
+&lt;td&gt;文章的作者。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;sourceLink&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;The source link or reference for the post content.&lt;/td&gt;
+&lt;td&gt;文章来源链接或参考。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;draft&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;If this post is still a draft, which won&apos;t be displayed.&lt;/td&gt;
+&lt;td&gt;是否为草稿（草稿不会显示）。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2&gt;Where to Place the Post Files&lt;/h2&gt;
-&lt;p&gt;Your post files should be placed in &lt;code&gt;src/content/posts/&lt;/code&gt; directory. You can also create sub-directories to better organize your posts and assets.&lt;/p&gt;
+&lt;h2&gt;文章文件存放位置&lt;/h2&gt;
+&lt;p&gt;文章文件应放在 &lt;code&gt;src/content/posts/&lt;/code&gt; 目录下。你也可以创建子目录来更好地组织文章和资源。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;src/content/posts/
 ├── post-1.md
 └── post-2/
     ├── cover.webp
     └── index.md
 &lt;/code&gt;&lt;/pre&gt;
-</content:encoded></item><item><title>Markdown Mermaid</title><link>https://arcoiris.cn/posts/markdown-mermaid/</link><guid isPermaLink="true">https://arcoiris.cn/posts/markdown-mermaid/</guid><description>A simple example of a Markdown blog post with Mermaid.</description><pubDate>Sun, 01 Oct 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Complete Guide to Markdown with Mermaid Diagrams&lt;/h1&gt;
-&lt;p&gt;This article demonstrates how to create various complex diagrams using Mermaid in Markdown documents, including flowcharts, sequence diagrams, Gantt charts, class diagrams, and state diagrams.&lt;/p&gt;
-&lt;h2&gt;Flowchart Example&lt;/h2&gt;
-&lt;p&gt;Flowcharts are excellent for representing processes or algorithm steps.&lt;/p&gt;
+</content:encoded></item><item><title>Markdown Mermaid 图表</title><link>https://arcoiris.cn/posts/markdown-mermaid/</link><guid isPermaLink="true">https://arcoiris.cn/posts/markdown-mermaid/</guid><description>一篇包含 Mermaid 图表的 Markdown 博客文章示例。</description><pubDate>Sun, 01 Oct 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Markdown 中使用 Mermaid 图表的完整指南&lt;/h1&gt;
+&lt;p&gt;本文演示了如何在 Markdown 文档中使用 Mermaid 创建各种复杂图表，包括流程图、时序图、甘特图、类图和状态图。&lt;/p&gt;
+&lt;h2&gt;流程图示例&lt;/h2&gt;
+&lt;p&gt;流程图非常适合展示流程或算法步骤。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;graph TD
-    A[Start] --&amp;gt; B{Condition Check}
-    B --&amp;gt;|Yes| C[Process Step 1]
-    B --&amp;gt;|No| D[Process Step 2]
-    C --&amp;gt; E[Subprocess]
+    A[开始] --&amp;gt; B{条件判断}
+    B --&amp;gt;|是| C[步骤 1]
+    B --&amp;gt;|否| D[步骤 2]
+    C --&amp;gt; E[子流程]
     D --&amp;gt; E
-    subgraph E [Subprocess Details]
-        E1[Substep 1] --&amp;gt; E2[Substep 2]
-        E2 --&amp;gt; E3[Substep 3]
+    subgraph E [子流程详情]
+        E1[子步骤 1] --&amp;gt; E2[子步骤 2]
+        E2 --&amp;gt; E3[子步骤 3]
     end
-    E --&amp;gt; F{Another Decision}
-    F --&amp;gt;|Option 1| G[Result 1]
-    F --&amp;gt;|Option 2| H[Result 2]
-    F --&amp;gt;|Option 3| I[Result 3]
-    G --&amp;gt; J[End]
+    E --&amp;gt; F{另一个决策}
+    F --&amp;gt;|选项 1| G[结果 1]
+    F --&amp;gt;|选项 2| H[结果 2]
+    F --&amp;gt;|选项 3| I[结果 3]
+    G --&amp;gt; J[结束]
     H --&amp;gt; J
     I --&amp;gt; J
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;Sequence Diagram Example&lt;/h2&gt;
-&lt;p&gt;Sequence diagrams show interactions between objects over time.&lt;/p&gt;
+&lt;h2&gt;时序图示例&lt;/h2&gt;
+&lt;p&gt;时序图展示对象之间的交互过程。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;sequenceDiagram
-    participant User
-    participant WebApp
-    participant Server
-    participant Database
+    participant 用户
+    participant Web应用
+    participant 服务器
+    participant 数据库
 
-    User-&amp;gt;&amp;gt;WebApp: Submit Login Request
-    WebApp-&amp;gt;&amp;gt;Server: Send Auth Request
-    Server-&amp;gt;&amp;gt;Database: Query User Credentials
-    Database--&amp;gt;&amp;gt;Server: Return User Data
-    Server--&amp;gt;&amp;gt;WebApp: Return Auth Result
+    用户-&amp;gt;&amp;gt;Web应用: 提交登录请求
+    Web应用-&amp;gt;&amp;gt;服务器: 发送认证请求
+    服务器-&amp;gt;&amp;gt;数据库: 查询用户凭证
+    数据库--&amp;gt;&amp;gt;服务器: 返回用户数据
+    服务器--&amp;gt;&amp;gt;Web应用: 返回认证结果
     
-    alt Auth Successful
-        WebApp-&amp;gt;&amp;gt;User: Show Welcome Page
-        WebApp-&amp;gt;&amp;gt;Server: Request User Data
-        Server-&amp;gt;&amp;gt;Database: Get User Preferences
-        Database--&amp;gt;&amp;gt;Server: Return Preferences
-        Server--&amp;gt;&amp;gt;WebApp: Return User Data
-        WebApp-&amp;gt;&amp;gt;User: Load Personalized Interface
-    else Auth Failed
-        WebApp-&amp;gt;&amp;gt;User: Show Error Message
-        WebApp-&amp;gt;&amp;gt;User: Prompt Re-entry
+    alt 认证成功
+        Web应用-&amp;gt;&amp;gt;用户: 显示欢迎页面
+        Web应用-&amp;gt;&amp;gt;服务器: 请求用户数据
+        服务器-&amp;gt;&amp;gt;数据库: 获取用户偏好
+        数据库--&amp;gt;&amp;gt;服务器: 返回偏好信息
+        服务器--&amp;gt;&amp;gt;Web应用: 返回用户数据
+        Web应用-&amp;gt;&amp;gt;用户: 加载个性化界面
+    else 认证失败
+        Web应用-&amp;gt;&amp;gt;用户: 显示错误信息
+        Web应用-&amp;gt;&amp;gt;用户: 提示重新输入
     end
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;Gantt Chart Example&lt;/h2&gt;
-&lt;p&gt;Gantt charts are perfect for displaying project schedules and timelines.&lt;/p&gt;
+&lt;h2&gt;甘特图示例&lt;/h2&gt;
+&lt;p&gt;甘特图非常适合展示项目进度和时间安排。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;gantt
-    title Website Development Project Timeline
+    title 网站开发项目时间线
     dateFormat  YYYY-MM-DD
     axisFormat  %m/%d
     
-    section Design Phase
-    Requirements Analysis      :a1, 2023-10-01, 7d
-    UI Design                 :a2, after a1, 10d
-    Prototype Creation        :a3, after a2, 5d
+    section 设计阶段
+    需求分析                :a1, 2023-10-01, 7d
+    UI设计                  :a2, after a1, 10d
+    原型制作                :a3, after a2, 5d
     
-    section Development Phase
-    Frontend Development      :b1, 2023-10-20, 15d
-    Backend Development       :b2, after a2, 18d
-    Database Design           :b3, after a1, 12d
+    section 开发阶段
+    前端开发                :b1, 2023-10-20, 15d
+    后端开发                :b2, after a2, 18d
+    数据库设计              :b3, after a1, 12d
     
-    section Testing Phase
-    Unit Testing              :c1, after b1, 8d
-    Integration Testing       :c2, after b2, 10d
-    User Acceptance Testing   :c3, after c2, 7d
+    section 测试阶段
+    单元测试                :c1, after b1, 8d
+    集成测试                :c2, after b2, 10d
+    用户验收测试            :c3, after c2, 7d
     
-    section Deployment
-    Production Deployment     :d1, after c3, 3d
-    Launch                    :milestone, after d1, 0d
+    section 部署
+    生产环境部署            :d1, after c3, 3d
+    上线发布                :milestone, after d1, 0d
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;Class Diagram Example&lt;/h2&gt;
-&lt;p&gt;Class diagrams show the static structure of a system, including classes, attributes, methods, and their relationships.&lt;/p&gt;
+&lt;h2&gt;类图示例&lt;/h2&gt;
+&lt;p&gt;类图展示系统的静态结构，包括类、属性、方法及其关系。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;classDiagram
-    class User {
+    class 用户 {
         +String username
         +String password
         +String email
@@ -929,7 +923,7 @@ draft: false
         +updateProfile()
     }
     
-    class Article {
+    class 文章 {
         +String title
         +String content
         +Date publishDate
@@ -939,63 +933,63 @@ draft: false
         +delete()
     }
     
-    class Comment {
+    class 评论 {
         +String content
         +Date commentDate
         +addComment()
         +deleteComment()
     }
     
-    class Category {
+    class 分类 {
         +String name
         +String description
         +addArticle()
         +removeArticle()
     }
     
-    User &quot;1&quot; -- &quot;*&quot; Article : writes
-    User &quot;1&quot; -- &quot;*&quot; Comment : posts
-    Article &quot;1&quot; -- &quot;*&quot; Comment : has
-    Article &quot;1&quot; -- &quot;*&quot; Category : belongs to
+    用户 &quot;1&quot; -- &quot;*&quot; 文章 : 撰写
+    用户 &quot;1&quot; -- &quot;*&quot; 评论 : 发布
+    文章 &quot;1&quot; -- &quot;*&quot; 评论 : 包含
+    文章 &quot;1&quot; -- &quot;*&quot; 分类 : 属于
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;State Diagram Example&lt;/h2&gt;
-&lt;p&gt;State diagrams show the sequence of states an object goes through during its life cycle.&lt;/p&gt;
+&lt;h2&gt;状态图示例&lt;/h2&gt;
+&lt;p&gt;状态图展示一个对象在其生命周期中经历的状态序列。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;stateDiagram-v2
-    [*] --&amp;gt; Draft
+    [*] --&amp;gt; 草稿
     
-    Draft --&amp;gt; UnderReview : submit
-    UnderReview --&amp;gt; Draft : reject
-    UnderReview --&amp;gt; Approved : approve
-    Approved --&amp;gt; Published : publish
-    Published --&amp;gt; Archived : archive
-    Published --&amp;gt; Draft : retract
+    草稿 --&amp;gt; 审核中 : 提交
+    审核中 --&amp;gt; 草稿 : 驳回
+    审核中 --&amp;gt; 已批准 : 通过
+    已批准 --&amp;gt; 已发布 : 发布
+    已发布 --&amp;gt; 已归档 : 归档
+    已发布 --&amp;gt; 草稿 : 撤回
     
-    state Published {
-        [*] --&amp;gt; Active
-        Active --&amp;gt; Hidden : temporarily hide
-        Hidden --&amp;gt; Active : restore
-        Active --&amp;gt; [*]
-        Hidden --&amp;gt; [*]
+    state 已发布 {
+        [*] --&amp;gt; 活跃
+        活跃 --&amp;gt; 隐藏 : 临时隐藏
+        隐藏 --&amp;gt; 活跃 : 恢复
+        活跃 --&amp;gt; [*]
+        隐藏 --&amp;gt; [*]
     }
     
-    Archived --&amp;gt; [*]
+    已归档 --&amp;gt; [*]
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;Pie Chart Example&lt;/h2&gt;
-&lt;p&gt;Pie charts are ideal for displaying proportions and percentage data.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pie title Website Traffic Sources Analysis
-    &quot;Search Engines&quot; : 45.6
-    &quot;Direct Access&quot; : 30.1
-    &quot;Social Media&quot; : 15.3
-    &quot;Referral Links&quot; : 6.4
-    &quot;Other Sources&quot; : 2.6
+&lt;h2&gt;饼图示例&lt;/h2&gt;
+&lt;p&gt;饼图非常适合展示比例和百分比数据。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pie title 网站流量来源分析
+    &quot;搜索引擎&quot; : 45.6
+    &quot;直接访问&quot; : 30.1
+    &quot;社交媒体&quot; : 15.3
+    &quot;外链引用&quot; : 6.4
+    &quot;其他来源&quot; : 2.6
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;Mermaid is a powerful tool for creating various types of diagrams in Markdown documents. This article demonstrated how to use flowcharts, sequence diagrams, Gantt charts, class diagrams, state diagrams, and pie charts. These diagrams can help you express complex concepts, processes, and data structures more clearly.&lt;/p&gt;
-&lt;p&gt;To use Mermaid, simply specify the mermaid language in a code block and describe the diagram using concise text syntax. Mermaid will automatically convert these descriptions into beautiful visual diagrams.&lt;/p&gt;
-&lt;p&gt;Try using Mermaid diagrams in your next technical blog post or project documentation - they will make your content more professional and easier to understand!&lt;/p&gt;
-</content:encoded></item><item><title>Include Video in the Posts</title><link>https://arcoiris.cn/posts/video/</link><guid isPermaLink="true">https://arcoiris.cn/posts/video/</guid><description>This post demonstrates how to include embedded video in a blog post.</description><pubDate>Mon, 01 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Just copy the embed code from YouTube or other platforms, and paste it in the markdown file.&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;Mermaid 是在 Markdown 文档中创建各种图表的强大工具。本文演示了如何使用流程图、时序图、甘特图、类图、状态图和饼图。这些图表可以帮助你更清晰地表达复杂的概念、流程和数据结构。&lt;/p&gt;
+&lt;p&gt;要使用 Mermaid，只需在代码块中指定 mermaid 语言，然后使用简洁的文本语法描述图表即可。Mermaid 会自动将这些描述转换为漂亮的可视化图表。&lt;/p&gt;
+&lt;p&gt;在你的下一篇技术博客文章或项目文档中试试 Mermaid 图表吧——它们会让你的内容更专业、更易于理解！&lt;/p&gt;
+</content:encoded></item><item><title>在文章中嵌入视频</title><link>https://arcoiris.cn/posts/video/</link><guid isPermaLink="true">https://arcoiris.cn/posts/video/</guid><description>本文演示如何在博客文章中嵌入视频。</description><pubDate>Mon, 01 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;只需从 YouTube 或其他平台复制嵌入代码，粘贴到 Markdown 文件中即可。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;---
-title: Include Video in the Post
+title: 在文章中嵌入视频
 published: 2023-10-19
 // ...
 ---
