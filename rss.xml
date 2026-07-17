@@ -701,6 +701,226 @@ _   下划线
 &lt;strong&gt;不生效&lt;/strong&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
 &lt;hr /&gt;
+</content:encoded></item><item><title>用 xAI Voice Agent + Cloudflare Workers 自动转录来电到飞书</title><link>https://arcoiris.cn/posts/xai-voice-feishu/</link><guid isPermaLink="true">https://arcoiris.cn/posts/xai-voice-feishu/</guid><description>从零搭建静默接听语音验证码的自动化方案：xAI 免费美国号码 + MCP 协议 + Cloudflare Workers，通话转录自动推送飞书群聊。</description><pubDate>Fri, 17 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;背景&lt;/h2&gt;
+&lt;p&gt;有些场景需要一个美国号码来接收语音验证码，但不想每次手动接听。偶然发现 xAI 的 Voice Agent 提供免费美国号码，于是折腾了一套全自动方案：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;验证码来电 → 静默接听转录 → 自动推送到飞书群聊&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;整体架构&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;                    ┌──────────────────┐
+                    │  xAI Voice Agent │
+                    │  (静默接听转录)    │
+                    └──────┬───────────┘
+                           │ 通话结束后调用
+                           ▼
+                    ┌──────────────────┐
+                    │  MCP Server      │
+                    │  (Cloudflare     │
+                    │   Workers)       │
+                    └──────┬───────────┘
+                           │ POST 转录内容
+                           ▼
+                    ┌──────────────────┐
+                    │  飞书群聊机器人   │
+                    │  (Webhook 接收)   │
+                    └──────────────────┘
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;核心组件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;xAI Voice Agent&lt;/strong&gt; — 申请免费美国号码，配置静默接听&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MCP Server（Cloudflare Workers）&lt;/strong&gt; — 实现 &lt;code&gt;send_to_feishu&lt;/code&gt; 工具&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;飞书自定义机器人&lt;/strong&gt; — 接收 Webhook 消息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;第一步：申请 xAI 免费美国号码&lt;/h2&gt;
+&lt;p&gt;登录 &lt;a href=&quot;https://console.x.ai/&quot;&gt;xAI Console&lt;/a&gt;，在 Voice → Phone Numbers 页面申请一个免费美国号码。&lt;/p&gt;
+&lt;p&gt;号码类型选 &lt;code&gt;xai_provisioned&lt;/code&gt;，创建后你会得到一个 E.164 格式的美国号码。&lt;/p&gt;
+&lt;h2&gt;第二步：配置静默接听 Agent&lt;/h2&gt;
+&lt;p&gt;在 Voice → Agents 页面创建一个 Agent，填入系统提示词：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;## Role &amp;amp; Persona
+You are a voicemail box.
+
+## Objective
+When receiving a call, do not speak. Listen quietly to the caller,
+and transcribe everything they say into text accurately. Do not respond.
+
+## Conversation Flow
+Stay completely silent from the start of the call. Record and transcribe
+the caller&apos;s message word for word.
+
+## After Call
+After the call ends, use the &quot;send_to_feishu&quot; tool to send the complete
+transcription to the team. Include the caller&apos;s phone number and the full transcript.
+
+## Guardrails &amp;amp; Escalation
+Stay strictly in scope as a passive transcription service.
+
+## Voice &amp;amp; Communication Style
+Do not speak at all. No words, sounds, or responses of any kind.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;关键思路：Agent 的任务是&lt;strong&gt;静默接听 + 转录&lt;/strong&gt;，通话结束后调用 MCP 工具将结果推送出去。&lt;/p&gt;
+&lt;h2&gt;第三步：准备飞书机器人&lt;/h2&gt;
+&lt;p&gt;转录内容最终要推送到飞书群聊，需要先创建一个飞书自定义机器人。&lt;/p&gt;
+&lt;h3&gt;注册飞书账号&lt;/h3&gt;
+&lt;p&gt;如果还没有飞书账号，去&lt;a href=&quot;https://www.feishu.cn/&quot;&gt;飞书官网&lt;/a&gt;注册。个人版免费，功能完全够用。&lt;/p&gt;
+&lt;h3&gt;创建群聊和机器人&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;在飞书中创建一个&lt;strong&gt;群聊&lt;/strong&gt;（可以是只有你自己的单人群）&lt;/li&gt;
+&lt;li&gt;进入群设置 → &lt;strong&gt;群机器人&lt;/strong&gt; → &lt;strong&gt;添加机器人&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;选择 &lt;strong&gt;自定义机器人&lt;/strong&gt;（Webhook 类型）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ &lt;strong&gt;注意&lt;/strong&gt;：添加自定义机器人&lt;strong&gt;只能在飞书桌面客户端操作&lt;/strong&gt;，Web 版和移动端均不支持此功能。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;设置机器人名称（如&quot;来电转录通知&quot;）和头像&lt;/li&gt;
+&lt;li&gt;点击&lt;strong&gt;完成&lt;/strong&gt;，会生成一个 Webhook 地址&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;https://open.feishu.cn/open-apis/bot/v2/hook/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;⚠️ 安全提醒&lt;/strong&gt;：这个 Webhook URL 拥有向该群聊发消息的权限，不要泄露给不相关的人。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;测试机器人&lt;/h3&gt;
+&lt;p&gt;用 curl 发一条测试消息确认机器人能正常工作：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -X POST &quot;https://open.feishu.cn/open-apis/bot/v2/hook/你的WebhookID&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &apos;{
+    &quot;msg_type&quot;: &quot;text&quot;,
+    &quot;content&quot;: { &quot;text&quot;: &quot;🔔 来电转录服务启动成功！&quot; }
+  }&apos;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;飞书群聊收到消息即表示配置成功。把这个 Webhook URL 保存好，下一步搭建 MCP Server 时会用到。&lt;/p&gt;
+&lt;h2&gt;第四步：搭建 MCP Server&lt;/h2&gt;
+&lt;p&gt;xAI 支持通过 &lt;a href=&quot;https://modelcontextprotocol.io/&quot;&gt;MCP（Model Context Protocol）&lt;/a&gt; 连接自定义工具。我用 Cloudflare Workers（免费版）实现了 &lt;code&gt;send_to_feishu&lt;/code&gt; 工具。&lt;/p&gt;
+&lt;h3&gt;Worker 核心代码&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;export default {
+  async fetch(request, env) {
+    const body = await request.json();
+    const { id, method, params } = body;
+
+    if (method === &apos;initialize&apos;) {
+      return Response.json({
+        jsonrpc: &apos;2.0&apos;, id,
+        result: {
+          protocolVersion: &apos;2025-03-26&apos;,
+          capabilities: { tools: {} },
+          serverInfo: { name: &apos;xai-feishu-mcp&apos;, version: &apos;1.0.0&apos; }
+        }
+      });
+    }
+
+    if (method === &apos;tools/list&apos;) {
+      return Response.json({
+        jsonrpc: &apos;2.0&apos;, id,
+        result: { tools: [{
+          name: &apos;send_to_feishu&apos;,
+          description: &apos;Send transcription to Feishu group chat&apos;,
+          inputSchema: {
+            type: &apos;object&apos;,
+            properties: {
+              title:      { type: &apos;string&apos; },
+              caller:     { type: &apos;string&apos; },
+              transcript: { type: &apos;string&apos; }
+            },
+            required: [&apos;transcript&apos;]
+          }
+        }]}
+      });
+    }
+
+    if (method === &apos;tools/call&apos;) {
+      const args = params.arguments || {};
+      const resp = await fetch(env.FEISHU_WEBHOOK_URL, {
+        method: &apos;POST&apos;,
+        headers: { &apos;Content-Type&apos;: &apos;application/json&apos; },
+        body: JSON.stringify({
+          msg_type: &apos;interactive&apos;,
+          card: {
+            header: { title: { tag: &apos;plain_text&apos;, content: args.title || &apos;📞 来电转录&apos; } },
+            elements: [{
+              tag: &apos;markdown&apos;,
+              content: `**来自：** ${args.caller}\n\n**转录：**\n${args.transcript}`
+            }]
+          }
+        })
+      });
+
+      return Response.json({
+        jsonrpc: &apos;2.0&apos;, id,
+        result: { content: [{ type: &apos;text&apos;, text: resp.ok ? &apos;✅ 已发送&apos; : `❌ ${resp.status}` }] }
+      });
+    }
+  }
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;部署命令&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;npx wrangler login
+npx wrangler secret put XAI_API_KEY
+npx wrangler secret put FEISHU_WEBHOOK_URL
+npx wrangler deploy
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;部署成功后得到一个 Cloudflare Workers 分配的 URL（格式如 &lt;code&gt;https://your-worker.xxx.workers.dev/&lt;/code&gt;）。&lt;/p&gt;
+&lt;h2&gt;第五步：连接 MCP 服务器到 xAI&lt;/h2&gt;
+&lt;p&gt;在 xAI Console 的 Agent 配置页 → &lt;strong&gt;Add a custom MCP server&lt;/strong&gt;：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;字段&lt;/th&gt;
+&lt;th&gt;值&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Name&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Feishu Forwarder&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Server URL&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;https://your-worker.xxx.workers.dev/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;连接成功后，Agent 就能识别并使用 &lt;code&gt;send_to_feishu&lt;/code&gt; 工具。&lt;/p&gt;
+&lt;h2&gt;踩坑记录&lt;/h2&gt;
+&lt;h3&gt;1. API Key 泄露&lt;/h3&gt;
+&lt;p&gt;xAI 的 API Key 在对话中容易被输出到日志或会话记录。发现后需立即去&lt;a href=&quot;https://console.x.ai/api-keys&quot;&gt;控制台&lt;/a&gt;撤销并重新生成。&lt;/p&gt;
+&lt;h3&gt;2. Webhook vs Agent 互斥&lt;/h3&gt;
+&lt;p&gt;查阅 xAI API 文档发现，电话号码的 &lt;code&gt;agent_id&lt;/code&gt; 和 &lt;code&gt;webhook&lt;/code&gt; 参数是&lt;strong&gt;互斥的&lt;/strong&gt;：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;模式&lt;/th&gt;
+&lt;th&gt;工作方式&lt;/th&gt;
+&lt;th&gt;能否拿到转录&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Agent&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;xAI 内部处理通话&lt;/td&gt;
+&lt;td&gt;❌ 转录不对外输出&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Webhook&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;通知你的服务器处理&lt;/td&gt;
+&lt;td&gt;✅ 你完全掌控&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;最终通过 &lt;strong&gt;MCP 协议&lt;/strong&gt; 解决了这个矛盾——Agent 内部转录完后主动调用外部工具推送，两者兼得。&lt;/p&gt;
+&lt;h3&gt;3. MCP 传输协议选择&lt;/h3&gt;
+&lt;p&gt;xAI 控制台的 MCP URL 示例带 &lt;code&gt;/sse&lt;/code&gt; 后缀（旧版 HTTP+SSE 传输），但最新的 MCP 规范推荐使用 &lt;strong&gt;Streamable HTTP&lt;/strong&gt;。需要让服务器同时兼容两种方式。&lt;/p&gt;
+&lt;p&gt;一开始尝试 SSE + Durable Objects，但 Cloudflare 免费计划限制较多（需付费升级才能用）。最终简化成纯 JSON-RPC over HTTP，直接响应，成功连接。&lt;/p&gt;
+&lt;h2&gt;最终效果&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;有验证码来电时：
+1. xAI 静默接听 → 自动转录
+2. 调用 send_to_feishu 工具
+3. 飞书群聊收到卡片消息：
+   📞 来电转录
+   来自：+1xxxxxxxxxx
+   转录：Your verification code is 123456...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;整个方案全部搭建在免费服务上（xAI 免费号码 + Cloudflare Workers 免费计划 + 飞书机器人免费），零成本运行。&lt;/p&gt;
 </content:encoded></item><item><title>Markdown 扩展功能</title><link>https://arcoiris.cn/posts/markdown-extended/</link><guid isPermaLink="true">https://arcoiris.cn/posts/markdown-extended/</guid><description>了解 Mizuki 中的 Markdown 扩展功能</description><pubDate>Wed, 01 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;GitHub 仓库卡片&lt;/h2&gt;
 &lt;p&gt;你可以添加指向 GitHub 仓库的动态卡片，页面加载时会从 GitHub API 拉取仓库信息。&lt;/p&gt;
 &lt;p&gt;::github{repo=&quot;LyraVoid/Mizuki&quot;}&lt;/p&gt;
