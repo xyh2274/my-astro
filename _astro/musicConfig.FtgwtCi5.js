@@ -1,1 +1,0 @@
-const e={enable:!0,showFloatingPlayer:!0,floatingEntryMode:"fab",mode:"meting",meting_api:"https://meting.mysqil.com/api?server=:server&type=:type&id=:id&auth=:auth&r=:r",id:"821310289",server:"netease",type:"playlist",playlists:[{id:"821310289",name:"网易云热歌",server:"netease",type:"playlist"}]};export{e as m};
