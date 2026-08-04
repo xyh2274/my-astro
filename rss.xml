@@ -701,6 +701,64 @@ _   下划线
 &lt;strong&gt;不生效&lt;/strong&gt;
 &amp;lt;/div&amp;gt;&lt;/p&gt;
 &lt;hr /&gt;
+</content:encoded></item><item><title>升级新功能展示：图片画廊、代码组、PlantUML 与 Wiki 链接</title><link>https://arcoiris.cn/posts/upgrade-features-demo/</link><guid isPermaLink="true">https://arcoiris.cn/posts/upgrade-features-demo/</guid><description>本篇展示 Astro 7 + Mizuki 官方最新版新增的 Markdown 增强功能：响应式图片画廊、多标签代码组、PlantUML 图表与 Wiki 内部链接。</description><pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;博客已升级到 &lt;strong&gt;Astro 7.1.3 + Mizuki 官方最新版&lt;/strong&gt;，本文用于演示新增的 Markdown 增强功能。每个功能都可以直接在文章里使用。&lt;/p&gt;
+&lt;h2&gt;1. 图片画廊（Image Gallery Grid）&lt;/h2&gt;
+&lt;p&gt;使用 &lt;code&gt;:::grid&lt;/code&gt; 容器包裹多张图片，自动生成响应式网格，并支持灯箱预览。默认三列、16/10 比例、居中裁剪：&lt;/p&gt;
+&lt;p&gt;:::grid
+&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/landscape-1.webp&quot; alt=&quot;风景图 1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/landscape-2.webp&quot; alt=&quot;风景图 2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/landscape-3.webp&quot; alt=&quot;风景图 3&quot; /&gt;
+:::&lt;/p&gt;
+&lt;p&gt;也可以通过参数自定义列数和比例：&lt;/p&gt;
+&lt;p&gt;:::grid{columns=&quot;4&quot; aspect=&quot;1/1&quot;}
+&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/square-1.webp&quot; alt=&quot;方块图 1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/square-2.webp&quot; alt=&quot;方块图 2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/square-3.webp&quot; alt=&quot;方块图 3&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/square-4.webp&quot; alt=&quot;方块图 4&quot; /&gt;
+:::&lt;/p&gt;
+&lt;h2&gt;2. 多标签代码组（Code Group）&lt;/h2&gt;
+&lt;p&gt;使用 &lt;code&gt;::: code-group&lt;/code&gt; 语法展示多语言代码，支持键盘方向键切换标签：&lt;/p&gt;
+&lt;p&gt;::: code-group labels=[TypeScript, Shell, CSS]&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export const config = {
+  framework: &quot;Mizuki&quot;,
+  astro: &quot;7.1.3&quot;,
+  enhanced: true,
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;pnpm check
+pnpm build
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;:root {
+  --primary: oklch(0.6 0.15 250);
+  --card-bg: oklch(0.16 0.02 250);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;:::&lt;/p&gt;
+&lt;h2&gt;3. PlantUML 图表&lt;/h2&gt;
+&lt;p&gt;使用 &lt;code&gt;```plantuml&lt;/code&gt; 代码块渲染 UML 图，支持缩放、拖拽、全屏查看：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@startuml
+actor 访客
+访客 -&amp;gt; 博客: 阅读文章
+博客 -&amp;gt; CDN: 加载静态资源
+CDN --&amp;gt; 访客: 返回页面
+博客 -&amp;gt; 网易云: 请求歌曲
+网易云 --&amp;gt; 访客: 返回音频流
+@enduml
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;4. Wiki 内部链接&lt;/h2&gt;
+&lt;p&gt;使用 &lt;code&gt;[[文章名]]&lt;/code&gt; 语法创建站内互链，支持锚点和自定义显示文本：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;直接链接：[[markdown-mermaid]]&lt;/li&gt;
+&lt;li&gt;带显示文本：[[markdown-mermaid|查看 Mermaid 图表示例]]&lt;/li&gt;
+&lt;li&gt;链接到章节：[[markdown-mermaid#Flowchart Example|跳转到流程图章节]]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;5. 代码块交互增强&lt;/h2&gt;
+&lt;p&gt;升级后的代码块自带：复制按钮、行号、代码折叠、语言徽标。试试点代码块右上角的复制按钮：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// 点击代码块右上角的复制图标
+console.log(&quot;复制成功！🎉&quot;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;p&gt;以上就是本次升级带来的主要新功能。这些功能配置位于 &lt;code&gt;src/config/markdownConfig.ts&lt;/code&gt;，可按需开关。更多语法细节可以参考官方示例文章。&lt;/p&gt;
 </content:encoded></item><item><title>用 xAI Voice Agent + Cloudflare Workers 自动转录来电到飞书</title><link>https://arcoiris.cn/posts/xai-voice-feishu/</link><guid isPermaLink="true">https://arcoiris.cn/posts/xai-voice-feishu/</guid><description>从零搭建静默接听语音验证码的自动化方案：xAI 免费美国号码 + MCP 协议 + Cloudflare Workers，通话转录自动推送飞书群聊。</description><pubDate>Fri, 17 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;背景&lt;/h2&gt;
 &lt;p&gt;有些场景需要一个美国号码来接收语音验证码，但不想每次手动接听。偶然发现 xAI 的 Voice Agent 提供免费美国号码，于是折腾了一套全自动方案：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -921,6 +979,353 @@ npx wrangler deploy
    转录：Your verification code is 123456...
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;整个方案全部搭建在免费服务上（xAI 免费号码 + Cloudflare Workers 免费计划 + 飞书机器人免费），零成本运行。&lt;/p&gt;
+</content:encoded></item><item><title>Image Gallery Grid: Syntax and Complete Examples</title><link>https://arcoiris.cn/posts/image-grid-demo/</link><guid isPermaLink="true">https://arcoiris.cn/posts/image-grid-demo/</guid><description>A complete guide to image gallery grid syntax, parameters, cropping, responsive behavior, captions, and lightbox navigation.</description><pubDate>Mon, 13 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code&gt;:::grid&lt;/code&gt; is the blog&apos;s image gallery container directive. It arranges ordinary Markdown images in a responsive grid with a consistent aspect ratio and automatically enables lightbox viewing. Use it for article images, screenshots, portfolios, or small albums.&lt;/p&gt;
+&lt;p&gt;Images in the same gallery use the same card ratio. By default, center cropping fills every card and keeps each row tidy; clicking an image opens the complete original in a lightbox. Every gallery has its own lightbox group and does not mix with other images in the post.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This post is both feature documentation and a visual test page. View the examples at desktop, tablet, and mobile widths, then click any image to verify lightbox grouping.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Minimal Syntax&lt;/h2&gt;
+&lt;p&gt;Write Markdown images directly between &lt;code&gt;:::grid&lt;/code&gt; and the closing &lt;code&gt;:::&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:::grid
+![Image description](./image-1.webp)
+
+![Image description](./image-2.webp)
+:::
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Each image must occupy its own paragraph, with a blank line between images. Keep only images in a gallery; write paragraphs, lists, and code blocks outside the container.&lt;/p&gt;
+&lt;p&gt;Here is the result of the minimal syntax. Without parameters, the grid uses three columns, a &lt;code&gt;16/10&lt;/code&gt; ratio, and &lt;code&gt;cover&lt;/code&gt; by default.&lt;/p&gt;
+&lt;p&gt;:::grid
+&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/landscape-1.webp&quot; alt=&quot;Minimal syntax result: first image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/landscape-2.webp&quot; alt=&quot;Minimal syntax result: second image&quot; /&gt;
+:::&lt;/p&gt;
+&lt;h2&gt;Parameters at a Glance&lt;/h2&gt;
+&lt;p&gt;Write all parameters in braces after the opening directive: &lt;code&gt;:::grid{parameter=&quot;value&quot;}&lt;/code&gt;.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Allowed values&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Purpose&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;columns&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Integers from &lt;code&gt;1&lt;/code&gt; to &lt;code&gt;6&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;3&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Number of columns per row on desktop. Invalid values fall back to &lt;code&gt;3&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;aspect&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;A positive ratio, such as &lt;code&gt;16/9&lt;/code&gt;, &lt;code&gt;3/4&lt;/code&gt;, or &lt;code&gt;1/1&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;16/10&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The displayed card ratio, not the original image ratio.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;fit&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;cover&lt;/code&gt;, &lt;code&gt;contain&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;cover&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Image fitting mode. &lt;code&gt;cover&lt;/code&gt; crops to fill; &lt;code&gt;contain&lt;/code&gt; preserves the complete image and may leave empty space.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Complete example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:::grid{columns=&quot;3&quot; aspect=&quot;16/9&quot; fit=&quot;cover&quot;}
+![First image](./image-1.webp &quot;Optional caption&quot;)
+
+![Second image](./image-2.webp &quot;Optional caption&quot;)
+
+![Third image](./image-3.webp &quot;Optional caption&quot;)
+:::
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The following result uses the three-column landscape syntax above. Compare the card ratio, column count, and the way a title takes precedence over alt text as the caption:&lt;/p&gt;
+&lt;p&gt;:::grid{columns=&quot;3&quot; aspect=&quot;16/9&quot; fit=&quot;cover&quot;}
+&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/landscape-1.webp&quot; alt=&quot;Parameter example: first landscape image&quot; title=&quot;Landscape caption 1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/landscape-2.webp&quot; alt=&quot;Parameter example: second landscape image&quot; title=&quot;Landscape caption 2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/landscape-3.webp&quot; alt=&quot;Parameter example: third landscape image&quot; title=&quot;Landscape caption 3&quot; /&gt;
+:::&lt;/p&gt;
+&lt;h2&gt;Captions and Alt Text&lt;/h2&gt;
+&lt;p&gt;An image&apos;s alt text serves both as accessible alternative text and as its default caption. When an image has an optional title, the title is used as the caption instead:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;![Text used for accessibility](./image.webp &quot;Caption shown below the image&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the same row, captions align to the bottom of every card. A wrapping caption does not make the others float at a different height. Ratio text such as &lt;code&gt;3:4&lt;/code&gt; and &lt;code&gt;16:9&lt;/code&gt; can be written directly in body text, headings, and alt text without escaping.&lt;/p&gt;
+&lt;p&gt;This example demonstrates the default alt-text caption, an explicit title caption, and bottom alignment for a longer caption:&lt;/p&gt;
+&lt;p&gt;:::grid{columns=&quot;3&quot; aspect=&quot;1/1&quot;}
+&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/square-1.webp&quot; alt=&quot;This image has no title, so its alt text is the caption&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/square-2.webp&quot; alt=&quot;Second square image with accessible alt text&quot; title=&quot;This title is displayed as the caption&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/square-3.webp&quot; alt=&quot;Accessible description of a 3:4 poster&quot; title=&quot;This is a longer caption for checking that every caption remains aligned to the bottom of its card when it wraps&quot; /&gt;
+:::&lt;/p&gt;
+&lt;h2&gt;Layout and Cropping&lt;/h2&gt;
+&lt;p&gt;Desktop layouts use the number of columns specified by &lt;code&gt;columns&lt;/code&gt;. Below &lt;code&gt;768px&lt;/code&gt;, grids use at most two columns; below &lt;code&gt;480px&lt;/code&gt;, they switch to one column. The card wrapper fixes the &lt;code&gt;aspect&lt;/code&gt; ratio and clips rounded corners, while the image fills the card without the theme&apos;s default image margins.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Choose &lt;code&gt;cover&lt;/code&gt;: the recommended default. Images are cropped from the center to fill the card, making the gallery look consistent.&lt;/li&gt;
+&lt;li&gt;Choose &lt;code&gt;contain&lt;/code&gt;: the full original image is shown without cropping. When its ratio differs from the card, the theme background remains visible; use this for images that cannot be cropped.&lt;/li&gt;
+&lt;li&gt;To preserve the complete image without empty space, set &lt;code&gt;aspect&lt;/code&gt; close to the original image ratio or place the image in a grid of its own.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The following examples place the same portrait images in &lt;code&gt;16/9&lt;/code&gt; cards with &lt;code&gt;cover&lt;/code&gt; and &lt;code&gt;contain&lt;/code&gt;. The first crops them; the second preserves the full image and leaves background space.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:::grid{columns=&quot;3&quot; aspect=&quot;16/9&quot; fit=&quot;cover&quot;}
+![Image description](./image-1.webp &quot;Optional caption&quot;)
+
+![Image description](./image-2.webp &quot;Optional caption&quot;)
+:::
+
+:::grid{columns=&quot;3&quot; aspect=&quot;16/9&quot; fit=&quot;contain&quot;}
+![Image description](./image-1.webp &quot;Optional caption&quot;)
+
+![Image description](./image-2.webp &quot;Optional caption&quot;)
+:::
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;:::grid{columns=&quot;3&quot; aspect=&quot;16/9&quot; fit=&quot;cover&quot;}
+&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/default-portrait-1.webp&quot; alt=&quot;First cover result&quot; title=&quot;Cover: center crop&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/default-portrait-2.webp&quot; alt=&quot;Second cover result&quot; title=&quot;Cover: fill the card&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/default-portrait-3.webp&quot; alt=&quot;Third cover result&quot; title=&quot;Cover: a more consistent layout&quot; /&gt;
+:::&lt;/p&gt;
+&lt;p&gt;:::grid{columns=&quot;3&quot; aspect=&quot;16/9&quot; fit=&quot;contain&quot;}
+&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/default-portrait-1.webp&quot; alt=&quot;First contain result&quot; title=&quot;Contain: preserve the complete original&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/default-portrait-2.webp&quot; alt=&quot;Second contain result&quot; title=&quot;Contain: empty space may appear&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/default-portrait-3.webp&quot; alt=&quot;Third contain result&quot; title=&quot;Contain: suitable for edge details&quot; /&gt;
+:::&lt;/p&gt;
+&lt;h2&gt;Default Configuration&lt;/h2&gt;
+&lt;p&gt;Without attributes, the default is three columns, a &lt;code&gt;16/10&lt;/code&gt; ratio, and &lt;code&gt;cover&lt;/code&gt; cropping. These three portrait images verify default cropping and captions.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:::grid
+![Image description](./image-1.webp)
+
+![Image description](./image-2.webp)
+
+![Image description](./image-3.webp)
+:::
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;:::grid
+&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/default-portrait-1.webp&quot; alt=&quot;Default configuration: portrait image one&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/default-portrait-2.webp&quot; alt=&quot;Default configuration: portrait image two&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/default-portrait-3.webp&quot; alt=&quot;Default configuration: portrait image three&quot; /&gt;
+:::&lt;/p&gt;
+&lt;h2&gt;Three-Column Portraits: 3:4&lt;/h2&gt;
+&lt;p&gt;With &lt;code&gt;aspect=&quot;3/4&quot;&lt;/code&gt;, the three portrait images fill consistently proportioned vertical cards. If an original image has a different ratio, &lt;code&gt;cover&lt;/code&gt; crops its edges from the center.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:::grid{columns=&quot;3&quot; aspect=&quot;3/4&quot;}
+![Portrait image description](./portrait-1.webp)
+
+![Portrait image description](./portrait-2.webp)
+
+![Portrait image description](./portrait-3.webp)
+:::
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;:::grid{columns=&quot;3&quot; aspect=&quot;3/4&quot;}
+&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/default-portrait-1.webp&quot; alt=&quot;3:4 test image one&quot; title=&quot;Portrait 1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/default-portrait-2.webp&quot; alt=&quot;3:4 test image two&quot; title=&quot;Portrait 2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/default-portrait-3.webp&quot; alt=&quot;3:4 test image three&quot; title=&quot;Portrait 3&quot; /&gt;
+:::&lt;/p&gt;
+&lt;h2&gt;Three-Column Landscapes: 16:9&lt;/h2&gt;
+&lt;p&gt;This set demonstrates a common video-cover ratio in a three-column layout. Cropping is minimal when the landscape images are close to the card ratio.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:::grid{columns=&quot;3&quot; aspect=&quot;16/9&quot;}
+![Landscape image description](./landscape-1.webp)
+
+![Landscape image description](./landscape-2.webp)
+
+![Landscape image description](./landscape-3.webp)
+:::
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;:::grid{columns=&quot;3&quot; aspect=&quot;16/9&quot;}
+&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/feature-landscape-1.webp&quot; alt=&quot;16:9 test image one&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/feature-landscape-2.webp&quot; alt=&quot;16:9 test image two&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/feature-landscape-3.webp&quot; alt=&quot;16:9 test image three&quot; /&gt;
+:::&lt;/p&gt;
+&lt;h2&gt;Two-Column Squares: 1:1&lt;/h2&gt;
+&lt;p&gt;Two columns work well when larger preview cards are needed. The third image moves to the next row. The final row keeps its grid-track width instead of stretching images to fill the row.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:::grid{columns=&quot;2&quot; aspect=&quot;1/1&quot;}
+![Square image description](./square-1.webp)
+
+![Square image description](./square-2.webp)
+
+![Square image description](./square-3.webp)
+:::
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;:::grid{columns=&quot;2&quot; aspect=&quot;1/1&quot;}
+&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/mixed-square-1.webp&quot; alt=&quot;1:1 test image one&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/mixed-square-2.webp&quot; alt=&quot;1:1 test image two&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/mixed-square-3.webp&quot; alt=&quot;1:1 test image three&quot; /&gt;
+:::&lt;/p&gt;
+&lt;h2&gt;Four Columns with &lt;code&gt;contain&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;fit=&quot;contain&quot;&lt;/code&gt; does not crop the original image. When the image ratio differs from the card ratio, the theme background remains visible. This is intentional, not a layout issue. It also verifies that four-column grids and separate lightbox groups do not interfere with each other.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:::grid{columns=&quot;4&quot; aspect=&quot;16/9&quot; fit=&quot;contain&quot;}
+![Image description](./image-1.webp)
+
+![Image description](./image-2.webp)
+
+![Image description](./image-3.webp)
+:::
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;:::grid{columns=&quot;4&quot; aspect=&quot;16/9&quot; fit=&quot;contain&quot;}
+&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/default-portrait-1.webp&quot; alt=&quot;Contain: portrait image one&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/default-portrait-2.webp&quot; alt=&quot;Contain: portrait image two&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/default-portrait-3.webp&quot; alt=&quot;Contain: portrait image three&quot; /&gt;
+:::&lt;/p&gt;
+&lt;h2&gt;Single-Column Detail Image&lt;/h2&gt;
+&lt;p&gt;One column is suitable when an image needs a larger reading size. It remains one column on desktop, tablet, and mobile, and the original is still available in the lightbox.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:::grid{columns=&quot;1&quot; aspect=&quot;16/9&quot;}
+![Image description](./detail.webp)
+:::
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;:::grid{columns=&quot;1&quot; aspect=&quot;16/9&quot;}
+&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/feature-landscape-1.webp&quot; alt=&quot;Single-column test image&quot; /&gt;
+:::&lt;/p&gt;
+&lt;h2&gt;Sparse Five-Column Row&lt;/h2&gt;
+&lt;p&gt;Five columns verify a higher supported column count. With only three images, the final row remains left-aligned instead of stretching the images.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:::grid{columns=&quot;5&quot; aspect=&quot;1/1&quot;}
+![Thumbnail description](./thumb-1.webp)
+
+![Thumbnail description](./thumb-2.webp)
+
+![Thumbnail description](./thumb-3.webp)
+:::
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;:::grid{columns=&quot;5&quot; aspect=&quot;1/1&quot;}
+&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/mixed-square-1.webp&quot; alt=&quot;Five-column test image one&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/mixed-square-2.webp&quot; alt=&quot;Five-column test image two&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/mixed-square-3.webp&quot; alt=&quot;Five-column test image three&quot; /&gt;
+:::&lt;/p&gt;
+&lt;h2&gt;Mixed Images in Six Columns&lt;/h2&gt;
+&lt;p&gt;Six columns are the current maximum. Mixing landscape and portrait images verifies &lt;code&gt;cover&lt;/code&gt; cropping, captions on narrow cards, and a dense desktop layout. For readable article content, two to four columns are usually preferable.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:::grid{columns=&quot;6&quot; aspect=&quot;1/1&quot;}
+![Image description](./image-1.webp)
+
+![Image description](./image-2.webp)
+
+![Image description](./image-3.webp)
+
+![Image description](./image-4.webp)
+
+![Image description](./image-5.webp)
+
+![Image description](./image-6.webp)
+:::
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;:::grid{columns=&quot;6&quot; aspect=&quot;1/1&quot;}
+&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/default-portrait-1.webp&quot; alt=&quot;Six-column test image one&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/default-portrait-2.webp&quot; alt=&quot;Six-column test image two&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/default-portrait-3.webp&quot; alt=&quot;Six-column test image three&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/feature-landscape-1.webp&quot; alt=&quot;Six-column test image four&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/feature-landscape-2.webp&quot; alt=&quot;Six-column test image five&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/feature-landscape-3.webp&quot; alt=&quot;Six-column test image six&quot; /&gt;
+:::&lt;/p&gt;
+&lt;h2&gt;Four-Column Squares: 1:1&lt;/h2&gt;
+&lt;p&gt;Four square images with the same ratio are a typical four-column layout. Desktop displays all four in one row; tablet collapses to two columns and mobile to one.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:::grid{columns=&quot;4&quot; aspect=&quot;1/1&quot;}
+![Square image description](./square-1.webp)
+
+![Square image description](./square-2.webp)
+
+![Square image description](./square-3.webp)
+
+![Square image description](./square-4.webp)
+:::
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;:::grid{columns=&quot;4&quot; aspect=&quot;1/1&quot;}
+&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/square-1.webp&quot; alt=&quot;Square image one&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/square-2.webp&quot; alt=&quot;Square image two&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/square-3.webp&quot; alt=&quot;Square image three&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/square-4.webp&quot; alt=&quot;Square image four&quot; /&gt;
+:::&lt;/p&gt;
+&lt;h2&gt;Six-Column Landscapes: 16:9&lt;/h2&gt;
+&lt;p&gt;Six landscape columns work well for thumbnail previews, portfolios, and screenshot indexes. Even if original ratios differ slightly, &lt;code&gt;cover&lt;/code&gt; fills every &lt;code&gt;16/9&lt;/code&gt; card consistently.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:::grid{columns=&quot;6&quot; aspect=&quot;16/9&quot;}
+![Landscape image description](./landscape-1.webp)
+
+![Landscape image description](./landscape-2.webp)
+
+![Landscape image description](./landscape-3.webp)
+
+![Landscape image description](./landscape-4.webp)
+
+![Landscape image description](./landscape-5.webp)
+
+![Landscape image description](./landscape-6.webp)
+:::
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;:::grid{columns=&quot;6&quot; aspect=&quot;16/9&quot;}
+&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/landscape-1.webp&quot; alt=&quot;Landscape image one&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/landscape-2.webp&quot; alt=&quot;Landscape image two&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/landscape-3.webp&quot; alt=&quot;Landscape image three&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/landscape-4.webp&quot; alt=&quot;Landscape image four&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/landscape-5.webp&quot; alt=&quot;Landscape image five&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/landscape-6.webp&quot; alt=&quot;Landscape image six&quot; /&gt;
+:::&lt;/p&gt;
+&lt;h2&gt;Three-Column Portraits: 3:4&lt;/h2&gt;
+&lt;p&gt;This group of six portrait images demonstrates a common layout for people, posters, or mobile screenshots. The images form two rows of three, with captions aligned to the bottom.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:::grid{columns=&quot;3&quot; aspect=&quot;3/4&quot;}
+![Portrait image description](./portrait-1.webp)
+
+![Portrait image description](./portrait-2.webp)
+
+![Portrait image description](./portrait-3.webp)
+
+![Portrait image description](./portrait-4.webp)
+
+![Portrait image description](./portrait-5.webp)
+
+![Portrait image description](./portrait-6.webp)
+:::
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;:::grid{columns=&quot;3&quot; aspect=&quot;3/4&quot;}
+&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/portrait-1.webp&quot; alt=&quot;Portrait image one&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/portrait-2.webp&quot; alt=&quot;Portrait image two&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/portrait-3.webp&quot; alt=&quot;Portrait image three&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/portrait-4.webp&quot; alt=&quot;Portrait image four&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/portrait-5.webp&quot; alt=&quot;Portrait image five&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/portrait-6.webp&quot; alt=&quot;Portrait image six&quot; /&gt;
+:::&lt;/p&gt;
+&lt;h2&gt;Edge-Critical Content: &lt;code&gt;cover&lt;/code&gt; and Lightbox&lt;/h2&gt;
+&lt;p&gt;These images contain important text or details near their edges. &lt;code&gt;cover&lt;/code&gt; keeps the grid tidy but may crop those edges; click an image to view the uncropped original in the lightbox. Use clear captions for edge-sensitive images, or use &lt;code&gt;contain&lt;/code&gt; below.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:::grid{columns=&quot;3&quot; aspect=&quot;16/9&quot; fit=&quot;cover&quot;}
+![Edge-critical content](./critical-1.webp &quot;Open the lightbox to view the complete edge content&quot;)
+
+![Edge-critical content](./critical-2.webp &quot;Open the lightbox to view the complete edge content&quot;)
+
+![Edge-critical content](./critical-3.webp &quot;Open the lightbox to view the complete edge content&quot;)
+:::
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;:::grid{columns=&quot;3&quot; aspect=&quot;16/9&quot; fit=&quot;cover&quot;}
+&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/critical-1.webp&quot; alt=&quot;First edge-critical image&quot; title=&quot;Open the lightbox to view the complete edge content&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/critical-2.webp&quot; alt=&quot;Second edge-critical image&quot; title=&quot;Open the lightbox to view the complete edge content&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/critical-3.webp&quot; alt=&quot;Third edge-critical image&quot; title=&quot;Open the lightbox to view the complete edge content&quot; /&gt;
+:::&lt;/p&gt;
+&lt;h2&gt;Extreme Ratios with &lt;code&gt;contain&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;For banners, long screenshots, and other extreme image ratios, &lt;code&gt;contain&lt;/code&gt; displays the complete original. Unlike &lt;code&gt;cover&lt;/code&gt;, it may leave theme-background space, but it never crops content.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:::grid{columns=&quot;3&quot; aspect=&quot;16/9&quot; fit=&quot;contain&quot;}
+![Complete screenshot description](./wide-1.webp)
+
+![Complete screenshot description](./wide-2.webp)
+
+![Complete screenshot description](./wide-3.webp)
+:::
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;:::grid{columns=&quot;3&quot; aspect=&quot;16/9&quot; fit=&quot;contain&quot;}
+&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/extreme-1.webp&quot; alt=&quot;Extreme-ratio image one&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/extreme-2.webp&quot; alt=&quot;Extreme-ratio image two&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/extreme-3.webp&quot; alt=&quot;Extreme-ratio image three&quot; /&gt;
+:::&lt;/p&gt;
+&lt;h2&gt;Transparent Images&lt;/h2&gt;
+&lt;p&gt;Transparent images reveal the card&apos;s theme background. This single-column &lt;code&gt;contain&lt;/code&gt; example makes the transparent areas, original edges, and lightbox behavior easy to inspect.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:::grid{columns=&quot;1&quot; aspect=&quot;16/9&quot; fit=&quot;contain&quot;}
+![Transparent image description](./transparent.webp)
+:::
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;:::grid{columns=&quot;1&quot; aspect=&quot;16/9&quot; fit=&quot;contain&quot;}
+&lt;img src=&quot;https://arcoiris.cn/images/demos/image-grid-demo/transparent-1.webp&quot; alt=&quot;Transparent-background test image&quot; /&gt;
+:::&lt;/p&gt;
+&lt;h2&gt;Lightbox Navigation&lt;/h2&gt;
+&lt;p&gt;Click any image in a grid to open the Fancybox lightbox. There you can zoom, rotate, enter fullscreen, view thumbnails, and navigate with the arrow keys. Navigation is limited to the current &lt;code&gt;:::grid&lt;/code&gt; container: for example, clicking &quot;16:9 test image one&quot; only opens the other two landscape images in that section.&lt;/p&gt;
+&lt;p&gt;Ordinary Markdown images in the same post continue to be handled separately; they are not added to any grid gallery.&lt;/p&gt;
+&lt;h2&gt;Checklist&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Images in each grid have consistent dimensions, with captions below the cards.&lt;/li&gt;
+&lt;li&gt;Images scale slightly on hover; after clicking, they can be zoomed, rotated, and navigated with the keyboard.&lt;/li&gt;
+&lt;li&gt;Clicking &quot;16:9 test image one&quot; lets the lightbox browse only the other two landscape images in that section.&lt;/li&gt;
+&lt;li&gt;Below 768px, grids use at most two columns; below 480px, they use one column.&lt;/li&gt;
+&lt;li&gt;Portrait images in &quot;Four Columns with &lt;code&gt;contain&lt;/code&gt;&quot; are fully visible with empty space and no cropping.&lt;/li&gt;
+&lt;li&gt;Five- and six-column grids retain their specified column count on wide screens, then collapse to two or one column according to the responsive rules.&lt;/li&gt;
+&lt;/ol&gt;
 </content:encoded></item><item><title>Markdown 扩展功能</title><link>https://arcoiris.cn/posts/markdown-extended/</link><guid isPermaLink="true">https://arcoiris.cn/posts/markdown-extended/</guid><description>了解 Mizuki 中的 Markdown 扩展功能</description><pubDate>Wed, 01 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;GitHub 仓库卡片&lt;/h2&gt;
 &lt;p&gt;你可以添加指向 GitHub 仓库的动态卡片，页面加载时会从 GitHub API 拉取仓库信息。&lt;/p&gt;
 &lt;p&gt;::github{repo=&quot;LyraVoid/Mizuki&quot;}&lt;/p&gt;

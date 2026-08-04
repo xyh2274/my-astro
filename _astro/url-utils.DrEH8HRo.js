@@ -1,1 +1,0 @@
-import"./navBarConfig.DhxDCSZI.js";import"./zh_TW.vPeSsvua.js";function a(t,r){const e=t.replace(/^\/|\/$/g,"").toLowerCase(),n=r.replace(/^\/|\/$/g,"").toLowerCase();return e===n}function o(...t){return t.join("/").replace(/\/+/g,"/")}function u(t){return t.startsWith("http://")||t.startsWith("https://")?t:o("","/",t)}export{a as p,u};
